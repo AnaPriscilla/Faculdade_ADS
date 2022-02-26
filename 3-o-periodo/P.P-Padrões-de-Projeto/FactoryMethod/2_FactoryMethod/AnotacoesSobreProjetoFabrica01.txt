@@ -1,0 +1,31 @@
+Para melhorar o código do Projeto 01:
+*Aplicar HERANÇA para melhorar o código do exempo fabrica01,
+pois o código dos objetos são iguais, só diferencia o objeto mesmo.
+
+implementou descrição para que os filhos criem da forma como desejam
+reduziu os codigos e levou para a classe abstrata.
+
+reduziu os códigos para facilitar a manutenção.
+
+- no projeto principal (main) tem muito codigo 
+oix, palio, captiva (todos são carro)
+Ao invés de ter um código na versão anterior repetido 3x, agora precisa ter ele apenas uma vez.
+
+**REFERÊNCIA É UMA SIMPLES VARIAVEL QUE DIZ ONDE O OBJETO ESTÁ!!!!
+QUANDO QUER IMPRIMIR SÓ CHAMAR O METODO imprimirDados(obj); 
+
+factory method: 
+Objetivo: Definir uma interface para criar o objeto, mas deixar as subclasses deciderem que classe instanciar.
+
+ENTENDENDO como aplicar o factory method:
+criar uma classe FabricaCarros
+criar metodo getCarro e com base na escolha vai criando...
+Vantagem: facilita o teste
+o que pode melhorar mais ainda é criar um enum (um conjunto infinito de valores - conjunto de valores aceitos)
+utitilizar switch / case
+
+Me preocupar com o 3ª e 4º ,
+pegar como base o 4º para aplicar - usando o enum
+o modelo switch / case no java suporta o enum (enumeration)
+
+Exemplo de ideia: Fábrica de Produto 
