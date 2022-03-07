@@ -16,9 +16,7 @@ public class Ong {
     //Implementação do Singleton
     private static Ong instanceSingleton;
 
-    private Ong(){
-    
-    }
+    private Ong(){}
 
     public static
          
