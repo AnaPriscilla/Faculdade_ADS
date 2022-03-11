@@ -6,12 +6,12 @@ package senai.com.br.funcionalidades;
  *
  * @author anapriscilla
  */
-public class Resultado_Ana_Priscilla extends javax.swing.JFrame {
+public class resultado_Ana_Priscilla extends javax.swing.JFrame {
 
     /**
      * Creates new form Registro_Candidato_Ana_Priscilla
      */
-    public Resultado_Ana_Priscilla() {
+    public resultado_Ana_Priscilla() {
         initComponents();
         initComplementos();
     }
@@ -21,7 +21,7 @@ public class Resultado_Ana_Priscilla extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);
     }
     
-    public void enviaResultado(Votacao_Ana_Priscilla tela_Votacao_Candidato_Ana_Priscilla, String resultadoVoto) {
+    public void enviaResultado(votacao_Ana_Priscilla tela_Votacao_Candidato_Ana_Priscilla, String resultadoVoto) {
         jTextAreaResultado.setText(resultadoVoto);
         
     }
@@ -144,14 +144,18 @@ public class Resultado_Ana_Priscilla extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Resultado_Ana_Priscilla.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(resultado_Ana_Priscilla.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Resultado_Ana_Priscilla.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(resultado_Ana_Priscilla.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Resultado_Ana_Priscilla.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(resultado_Ana_Priscilla.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Resultado_Ana_Priscilla.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(resultado_Ana_Priscilla.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
@@ -160,7 +164,7 @@ public class Resultado_Ana_Priscilla extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Resultado_Ana_Priscilla().setVisible(true);
+                new resultado_Ana_Priscilla().setVisible(true);
             }
         });
     }

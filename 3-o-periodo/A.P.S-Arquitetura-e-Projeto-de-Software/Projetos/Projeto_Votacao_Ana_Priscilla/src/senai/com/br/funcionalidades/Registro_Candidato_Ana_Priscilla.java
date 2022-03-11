@@ -7,12 +7,12 @@ package senai.com.br.funcionalidades;
  *
  * @author anapriscilla
  */
-public class Registro_Candidato_Ana_Priscilla extends javax.swing.JFrame {
+public class registro_Candidato_Ana_Priscilla extends javax.swing.JFrame {
 
     /**
      * Creates new form Registro_Candidato_Ana_Priscilla
      */
-    public Registro_Candidato_Ana_Priscilla() {
+    public registro_Candidato_Ana_Priscilla() {
         initComponents();
         initComplementos();
     }
@@ -23,7 +23,7 @@ public class Registro_Candidato_Ana_Priscilla extends javax.swing.JFrame {
     }
     
     /*Chamando a proxima janela*/
-    Votacao_Ana_Priscilla votacao = new Votacao_Ana_Priscilla();
+    votacao_Ana_Priscilla votacao = new votacao_Ana_Priscilla();
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -168,7 +168,7 @@ public class Registro_Candidato_Ana_Priscilla extends javax.swing.JFrame {
        if(!nomeCandidato1.getText().isEmpty() && !nomeCandidato2.getText().isEmpty() 
           && !nomeCandidato3.getText().isEmpty()){
            if(votacao==null){
-               votacao = new Votacao_Ana_Priscilla();
+               votacao = new votacao_Ana_Priscilla();
                votacao.setLocationRelativeTo(null);
                votacao.setVisible(true);
                votacao.setResizable(false);
@@ -203,20 +203,21 @@ public class Registro_Candidato_Ana_Priscilla extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Registro_Candidato_Ana_Priscilla.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(registro_Candidato_Ana_Priscilla.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Registro_Candidato_Ana_Priscilla.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(registro_Candidato_Ana_Priscilla.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Registro_Candidato_Ana_Priscilla.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(registro_Candidato_Ana_Priscilla.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Registro_Candidato_Ana_Priscilla.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(registro_Candidato_Ana_Priscilla.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Registro_Candidato_Ana_Priscilla().setVisible(true);
+                new registro_Candidato_Ana_Priscilla().setVisible(true);
             }
         });
     }

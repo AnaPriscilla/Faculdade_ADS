@@ -7,27 +7,27 @@ package senai.com.br.funcionalidades;
  *
  * @author anapriscilla
  */
-public class Votacao_Ana_Priscilla extends javax.swing.JFrame {
+public class votacao_Ana_Priscilla extends javax.swing.JFrame {
 
     /**
      * Creates new form Registro_Candidato_Ana_Priscilla
      */
     Voto_Votacao tela;
 
-    public Votacao_Ana_Priscilla() {
+    public votacao_Ana_Priscilla() {
         initComponents();
         tela = new Voto_Votacao();
     }
 
-    public void enviaPalavra(Registro_Candidato_Ana_Priscilla tela_Registro_Candidato_Ana_Priscilla, String nome) {
+    public void enviaPalavra(registro_Candidato_Ana_Priscilla tela_Registro_Candidato_Ana_Priscilla, String nome) {
         votarCandidato1.setText(nome);
     }
 
-    public void enviaPalavra2(Registro_Candidato_Ana_Priscilla tela_Registro_Candidato_Ana_Priscilla, String nome) {
+    public void enviaPalavra2(registro_Candidato_Ana_Priscilla tela_Registro_Candidato_Ana_Priscilla, String nome) {
         votarCandidato2.setText(nome);
     }
 
-    public void enviaPalavra3(Registro_Candidato_Ana_Priscilla tela_Registro_Candidato_Ana_Priscilla, String nome) {
+    public void enviaPalavra3(registro_Candidato_Ana_Priscilla tela_Registro_Candidato_Ana_Priscilla, String nome) {
         votarCandidato3.setText(nome);
     }
 
@@ -92,7 +92,7 @@ public class Votacao_Ana_Priscilla extends javax.swing.JFrame {
     /* private Registro_Candidato_Ana_Priscilla tela_registro;*/
 
  /*Chamando a proxima janela*/
-    Resultado_Ana_Priscilla resultadoVotos = new Resultado_Ana_Priscilla();
+    resultado_Ana_Priscilla resultadoVotos = new resultado_Ana_Priscilla();
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -288,21 +288,23 @@ public class Votacao_Ana_Priscilla extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Votacao_Ana_Priscilla.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(votacao_Ana_Priscilla.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Votacao_Ana_Priscilla.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(votacao_Ana_Priscilla.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Votacao_Ana_Priscilla.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(votacao_Ana_Priscilla.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Votacao_Ana_Priscilla.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(votacao_Ana_Priscilla.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Resultado_Ana_Priscilla().setVisible(true);
+                new resultado_Ana_Priscilla().setVisible(true);
             }
         });
     }
@@ -332,7 +334,7 @@ public class Votacao_Ana_Priscilla extends javax.swing.JFrame {
         // TODO add your handling code here:
         if (!resultadoVotacao.getText().isEmpty()) {
             if (resultadoVotos == null) {
-                resultadoVotos = new Resultado_Ana_Priscilla();
+                resultadoVotos = new resultado_Ana_Priscilla();
                 resultadoVotos.setLocationRelativeTo(null);
                 resultadoVotos.setVisible(true);
                 resultadoVotos.setResizable(false);
