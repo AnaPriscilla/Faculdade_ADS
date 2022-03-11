@@ -145,7 +145,7 @@
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="96" green="4f" red="2a" type="rgb"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="URnas - Sistema de Vota&#xe7;&#xe3;o - RESGISTRAR"/>
+            <Property name="text" type="java.lang.String" value="URnas - Sistema de Vota&#xe7;&#xe3;o - REGISTRAR"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel3">

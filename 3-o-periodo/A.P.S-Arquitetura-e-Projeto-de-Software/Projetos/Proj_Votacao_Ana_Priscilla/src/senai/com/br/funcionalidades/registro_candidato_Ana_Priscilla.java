@@ -75,7 +75,7 @@ public class registro_candidato_Ana_Priscilla extends javax.swing.JFrame {
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(42, 79, 150));
-        jLabel2.setText("URnas - Sistema de Votação - RESGISTRAR");
+        jLabel2.setText("URnas - Sistema de Votação - REGISTRAR");
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(102, 102, 102));
