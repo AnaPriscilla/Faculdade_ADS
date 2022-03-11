@@ -1,41 +1,98 @@
 /*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
+Lógica do Sistema, computa os votos e faz a porcentagem 
  */
 package senai.com.br.funcionalidades;
 
-import java.util.List;
-
 /**
  *
- * @author User
+ * @author anapriscilla
  */
 public class Votacao_Ana_Priscilla extends javax.swing.JFrame {
 
     /**
      * Creates new form Registro_Candidato_Ana_Priscilla
      */
-    
     Voto_Votacao tela;
-    
-   /* private Registro_Candidato_Ana_Priscilla tela_registro;*/
-    
+
     public Votacao_Ana_Priscilla() {
         initComponents();
         tela = new Voto_Votacao();
     }
-    
+
     public void enviaPalavra(Registro_Candidato_Ana_Priscilla tela_Registro_Candidato_Ana_Priscilla, String nome) {
         votarCandidato1.setText(nome);
     }
-    
-     public void enviaPalavra2 (Registro_Candidato_Ana_Priscilla tela_Registro_Candidato_Ana_Priscilla, String nome) {
+
+    public void enviaPalavra2(Registro_Candidato_Ana_Priscilla tela_Registro_Candidato_Ana_Priscilla, String nome) {
         votarCandidato2.setText(nome);
     }
-     
-      public void enviaPalavra3(Registro_Candidato_Ana_Priscilla tela_Registro_Candidato_Ana_Priscilla, String nome) {
+
+    public void enviaPalavra3(Registro_Candidato_Ana_Priscilla tela_Registro_Candidato_Ana_Priscilla, String nome) {
         votarCandidato3.setText(nome);
     }
+
+    public class Voto_Votacao {
+
+        Votacao voto;
+
+        public Voto_Votacao() {
+            voto = new Votacao();
+            voto.iniciar();
+        }
+
+        public void votar(int opcao) {
+            voto.votar(opcao);
+        }
+
+        public String exibirResultado() {
+            return voto.resultadoDaVotacao();
+        }
+    }
+
+    public class Votacao {
+        //Vetor de 3 posições
+
+        public String[] botao = new String[3];
+        public int[] quantidadeDeVotos = new int[3];
+        int totalDeVotos;
+
+        //Métodos 
+        public void iniciar() {
+            botao[0] = "1";
+            botao[1] = "2";
+            botao[2] = "3";
+            quantidadeDeVotos[0] = 0;
+            quantidadeDeVotos[1] = 0;
+            quantidadeDeVotos[2] = 0;
+            totalDeVotos = 0;
+        }
+
+        public void votar(int botao) {
+            quantidadeDeVotos[botao]++;
+            totalDeVotos++;
+        }
+
+        public float calcularPorcentagem(int botao) {
+            return (float) ((float) quantidadeDeVotos[botao] * 100.0 / (float) totalDeVotos);
+        }
+
+        public String resultadoDaVotacao() {
+            String resultado = "Quantidade de Votos: \n";
+            for (int i = 0; i < 3; i++) {
+                resultado = resultado + botao[i] + "| :" + quantidadeDeVotos[i] + "\n";
+            }
+            resultado += "Porcentagem da Votação: \n";
+            for (int i = 0; i < 3; i++) {
+                resultado = resultado + botao[i] + "| : " + calcularPorcentagem(i) + "%\n";
+            }
+            return resultado;
+        }
+    }
+
+    /* private Registro_Candidato_Ana_Priscilla tela_registro;*/
+
+ /*Chamando a proxima janela*/
+    Resultado_Ana_Priscilla resultadoVotos = new Resultado_Ana_Priscilla();
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -53,11 +110,9 @@ public class Votacao_Ana_Priscilla extends javax.swing.JFrame {
         votarCandidato1 = new javax.swing.JButton();
         votarCandidato2 = new javax.swing.JButton();
         votarCandidato3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
+        resultadoVotacao = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTextAreaResultado = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -116,10 +171,15 @@ public class Votacao_Ana_Priscilla extends javax.swing.JFrame {
             }
         });
 
-        jButton4.setBackground(new java.awt.Color(42, 79, 150));
-        jButton4.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jButton4.setForeground(new java.awt.Color(255, 255, 255));
-        jButton4.setText("RESULTADO");
+        resultadoVotacao.setBackground(new java.awt.Color(42, 79, 150));
+        resultadoVotacao.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        resultadoVotacao.setForeground(new java.awt.Color(255, 255, 255));
+        resultadoVotacao.setText("RESULTADO");
+        resultadoVotacao.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                resultadoVotacaoActionPerformed(evt);
+            }
+        });
 
         jLabel1.setBackground(new java.awt.Color(153, 153, 153));
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -128,10 +188,6 @@ public class Votacao_Ana_Priscilla extends javax.swing.JFrame {
 
         jSeparator1.setForeground(new java.awt.Color(204, 204, 204));
 
-        jTextAreaResultado.setColumns(20);
-        jTextAreaResultado.setRows(5);
-        jScrollPane1.setViewportView(jTextAreaResultado);
-
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -139,10 +195,6 @@ public class Votacao_Ana_Priscilla extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(123, 123, 123)
-                        .addComponent(jLabel2)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 58, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -153,16 +205,19 @@ public class Votacao_Ana_Priscilla extends javax.swing.JFrame {
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(resultadoVotacao, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addComponent(votarCandidato1, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(18, 18, 18)
                                         .addComponent(votarCandidato2, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(18, 18, 18)
-                                        .addComponent(votarCandidato3, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(jScrollPane1))
+                                        .addComponent(votarCandidato3, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                 .addGap(0, 0, Short.MAX_VALUE)))
-                        .addGap(65, 65, 65))))
+                        .addGap(65, 65, 65))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(123, 123, 123)
+                        .addComponent(jLabel2)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -184,10 +239,8 @@ public class Votacao_Ana_Priscilla extends javax.swing.JFrame {
                     .addComponent(votarCandidato1, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(votarCandidato2, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(votarCandidato3, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(resultadoVotacao, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(25, 25, 25))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 432, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -208,27 +261,6 @@ public class Votacao_Ana_Priscilla extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void votarCandidato2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_votarCandidato2ActionPerformed
-        // TODO add your handling code here:
-        tela.votar(1);
-        jTextAreaResultado.setText(tela.exibirResultado());
-    }//GEN-LAST:event_votarCandidato2ActionPerformed
-
-    private void votarCandidato1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_votarCandidato1ActionPerformed
-        // TODO add your handling code here:
-        tela.votar(0);
-        jTextAreaResultado.setText(tela.exibirResultado());
-    }//GEN-LAST:event_votarCandidato1ActionPerformed
-
-    private void votarCandidato3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_votarCandidato3ActionPerformed
-        // TODO add your handling code here:
-        tela.votar(2);
-        jTextAreaResultado.setText(tela.exibirResultado());
-    }//GEN-LAST:event_votarCandidato3ActionPerformed
-
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -261,17 +293,57 @@ public class Votacao_Ana_Priscilla extends javax.swing.JFrame {
             }
         });
     }
+    
+    private void votarCandidato2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_votarCandidato2ActionPerformed
+        // TODO add your handling code here:
+        tela.votar(1);
+        //resultadoVotacao.setText(tela.exibirResultado());
+    }//GEN-LAST:event_votarCandidato2ActionPerformed
+
+    private void votarCandidato1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_votarCandidato1ActionPerformed
+        // TODO add your handling code here:
+        tela.votar(0);
+        //resultadoVotacao.setText(tela.exibirResultado());
+
+    }//GEN-LAST:event_votarCandidato1ActionPerformed
+
+    private void votarCandidato3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_votarCandidato3ActionPerformed
+        // TODO add your handling code here:
+        tela.votar(2);
+        //resultadoVotacao.setText(tela.exibirResultado());
+    }//GEN-LAST:event_votarCandidato3ActionPerformed
+
+    private void resultadoVotacaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_resultadoVotacaoActionPerformed
+        // TODO add your handling code here:
+        if (!resultadoVotacao.getText().isEmpty()) {
+            if (resultadoVotos == null) {
+                resultadoVotos = new Resultado_Ana_Priscilla();
+                resultadoVotos.setLocationRelativeTo(null);
+                resultadoVotos.setVisible(true);
+                resultadoVotos.setResizable(false);
+            } else {
+                resultadoVotos.setLocationRelativeTo(null);
+                resultadoVotos.setVisible(true);
+                resultadoVotos.setResizable(false);
+            }
+
+            resultadoVotos.enviaResultado(this, tela.exibirResultado());
+        }
+    }//GEN-LAST:event_resultadoVotacaoActionPerformed
+
+    /**
+         * @param args the command line arguments
+         */
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JTextArea jTextAreaResultado;
+    private javax.swing.JButton resultadoVotacao;
     private javax.swing.JButton votarCandidato1;
     private javax.swing.JButton votarCandidato2;
     private javax.swing.JButton votarCandidato3;

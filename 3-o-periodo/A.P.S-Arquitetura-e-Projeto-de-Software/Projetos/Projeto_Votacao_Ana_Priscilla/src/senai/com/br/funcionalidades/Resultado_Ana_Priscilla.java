@@ -15,7 +15,19 @@ public class Resultado_Ana_Priscilla extends javax.swing.JFrame {
      */
     public Resultado_Ana_Priscilla() {
         initComponents();
+        initComplementos();
     }
+    
+     /*Para centralizar a tela */
+    public void initComplementos() {
+        this.setLocationRelativeTo(null);
+    }
+    
+    public void enviaResultado(Votacao_Ana_Priscilla tela_Votacao_Candidato_Ana_Priscilla, String resultadoVoto) {
+        jTextAreaResultado.setText(resultadoVoto);
+        
+    }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -31,9 +43,8 @@ public class Resultado_Ana_Priscilla extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        jTextAreaResultado = new javax.swing.JTextArea();
         jLabel3 = new javax.swing.JLabel();
-        jButton5 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -59,18 +70,13 @@ public class Resultado_Ana_Priscilla extends javax.swing.JFrame {
         jLabel6.setIcon(new javax.swing.ImageIcon("C:\\Users\\User\\Downloads\\vote 1 (1).png")); // NOI18N
         jLabel6.setText("jLabel6");
 
-        jTextArea1.setBackground(new java.awt.Color(255, 255, 255));
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane1.setViewportView(jTextArea1);
+        jTextAreaResultado.setBackground(new java.awt.Color(255, 255, 255));
+        jTextAreaResultado.setColumns(20);
+        jTextAreaResultado.setRows(5);
+        jScrollPane1.setViewportView(jTextAreaResultado);
 
         jLabel3.setForeground(new java.awt.Color(102, 102, 102));
         jLabel3.setText("Candidatos mais votados e %");
-
-        jButton5.setBackground(new java.awt.Color(42, 79, 150));
-        jButton5.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jButton5.setForeground(new java.awt.Color(255, 255, 255));
-        jButton5.setText("OK");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -89,8 +95,7 @@ public class Resultado_Ana_Priscilla extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jScrollPane1)
-                            .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jScrollPane1))
                         .addGap(65, 65, 65))))
         );
         jPanel1Layout.setVerticalGroup(
@@ -104,8 +109,6 @@ public class Resultado_Ana_Priscilla extends javax.swing.JFrame {
                 .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 432, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -165,13 +168,12 @@ public class Resultado_Ana_Priscilla extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JTextArea jTextAreaResultado;
     // End of variables declaration//GEN-END:variables
 }

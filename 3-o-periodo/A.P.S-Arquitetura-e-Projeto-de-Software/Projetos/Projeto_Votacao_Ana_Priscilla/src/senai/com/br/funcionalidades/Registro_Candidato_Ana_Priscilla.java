@@ -5,7 +5,7 @@ package senai.com.br.funcionalidades;
 
 /**
  *
- * @author User
+ * @author anapriscilla
  */
 public class Registro_Candidato_Ana_Priscilla extends javax.swing.JFrame {
 
@@ -14,8 +14,14 @@ public class Registro_Candidato_Ana_Priscilla extends javax.swing.JFrame {
      */
     public Registro_Candidato_Ana_Priscilla() {
         initComponents();
-         
+        initComplementos();
     }
+    
+    /*Para centralizar a tela */
+    public void initComplementos() {
+        this.setLocationRelativeTo(null);
+    }
+    
     /*Chamando a proxima janela*/
     Votacao_Ana_Priscilla votacao = new Votacao_Ana_Priscilla();
 
@@ -102,14 +108,17 @@ public class Registro_Candidato_Ana_Priscilla extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel3)
                             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(nomeCandidato1)
                             .addComponent(nomeCandidato2)
                             .addComponent(nomeCandidato3)
-                            .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, 397, Short.MAX_VALUE)
-                            .addComponent(jLabel5))
+                            .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, 368, Short.MAX_VALUE)
+                            .addComponent(nomeCandidato1)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel5)
+                                    .addComponent(jLabel3))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 116, Short.MAX_VALUE)
@@ -123,11 +132,11 @@ public class Registro_Candidato_Ana_Priscilla extends javax.swing.JFrame {
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel2)
-                .addGap(39, 39, 39)
+                .addGap(18, 18, 18)
                 .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(nomeCandidato1, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addGap(39, 39, 39)
                 .addComponent(jLabel4)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(nomeCandidato2, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -159,7 +168,8 @@ public class Registro_Candidato_Ana_Priscilla extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // Pegando os dados digitados pelo usuário
-       if(!nomeCandidato1.getText().isEmpty() && !nomeCandidato2.getText().isEmpty() && !nomeCandidato3.getText().isEmpty()){
+       if(!nomeCandidato1.getText().isEmpty() && !nomeCandidato2.getText().isEmpty() 
+          && !nomeCandidato3.getText().isEmpty()){
            if(votacao==null){
                votacao = new Votacao_Ana_Priscilla();
                votacao.setLocationRelativeTo(null);
@@ -174,8 +184,9 @@ public class Registro_Candidato_Ana_Priscilla extends javax.swing.JFrame {
            votacao.enviaPalavra(this, nomeCandidato1.getText());
            votacao.enviaPalavra2(this, nomeCandidato2.getText());
            votacao.enviaPalavra3(this, nomeCandidato3.getText());
+           this.dispose();
+  
        }
-
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
