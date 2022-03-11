@@ -19,15 +19,15 @@ public class votacao_Ana_Priscilla extends javax.swing.JFrame {
         tela = new Voto_Votacao();
     }
 
-    public void enviaPalavra(registro_Candidato_Ana_Priscilla tela_Registro_Candidato_Ana_Priscilla, String nome) {
+    public void enviaPalavra(registro_candidato_Ana_Priscilla tela_Registro_Candidato_Ana_Priscilla, String nome) {
         votarCandidato1.setText(nome);
     }
 
-    public void enviaPalavra2(registro_Candidato_Ana_Priscilla tela_Registro_Candidato_Ana_Priscilla, String nome) {
+    public void enviaPalavra2(registro_candidato_Ana_Priscilla tela_Registro_Candidato_Ana_Priscilla, String nome) {
         votarCandidato2.setText(nome);
     }
 
-    public void enviaPalavra3(registro_Candidato_Ana_Priscilla tela_Registro_Candidato_Ana_Priscilla, String nome) {
+    public void enviaPalavra3(registro_candidato_Ana_Priscilla tela_Registro_Candidato_Ana_Priscilla, String nome) {
         votarCandidato3.setText(nome);
     }
 

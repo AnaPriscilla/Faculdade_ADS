@@ -7,12 +7,12 @@ package senai.com.br.funcionalidades;
  *
  * @author anapriscilla
  */
-public class registro_Candidato_Ana_Priscilla extends javax.swing.JFrame {
+public class registro_candidato_Ana_Priscilla extends javax.swing.JFrame {
 
     /**
      * Creates new form Registro_Candidato_Ana_Priscilla
      */
-    public registro_Candidato_Ana_Priscilla() {
+    public registro_candidato_Ana_Priscilla() {
         initComponents();
         initComplementos();
     }
@@ -203,21 +203,23 @@ public class registro_Candidato_Ana_Priscilla extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(registro_Candidato_Ana_Priscilla.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(registro_candidato_Ana_Priscilla.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(registro_Candidato_Ana_Priscilla.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(registro_candidato_Ana_Priscilla.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(registro_Candidato_Ana_Priscilla.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(registro_candidato_Ana_Priscilla.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(registro_Candidato_Ana_Priscilla.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(registro_candidato_Ana_Priscilla.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new registro_Candidato_Ana_Priscilla().setVisible(true);
+                new registro_candidato_Ana_Priscilla().setVisible(true);
             }
         });
     }
