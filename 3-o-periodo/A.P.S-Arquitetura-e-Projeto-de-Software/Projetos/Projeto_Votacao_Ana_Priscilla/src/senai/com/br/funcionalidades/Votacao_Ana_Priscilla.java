@@ -58,9 +58,9 @@ public class Votacao_Ana_Priscilla extends javax.swing.JFrame {
 
         //Métodos 
         public void iniciar() {
-            botao[0] = "1";
-            botao[1] = "2";
-            botao[2] = "3";
+            botao[0] = "1º Candidato ";
+            botao[1] = "2º Candidato ";
+            botao[2] = "3º Candidato ";
             quantidadeDeVotos[0] = 0;
             quantidadeDeVotos[1] = 0;
             quantidadeDeVotos[2] = 0;
@@ -72,18 +72,18 @@ public class Votacao_Ana_Priscilla extends javax.swing.JFrame {
             totalDeVotos++;
         }
 
-        public float calcularPorcentagem(int botao) {
-            return (float) ((float) quantidadeDeVotos[botao] * 100.0 / (float) totalDeVotos);
+        public double calcularPorcentagem(int botao) {
+            return (double) (quantidadeDeVotos[botao] * 100.0 / totalDeVotos);
         }
 
         public String resultadoDaVotacao() {
-            String resultado = "Quantidade de Votos: \n";
+            String resultado = "\nQuantidade de votos por candidato: \n";
             for (int i = 0; i < 3; i++) {
-                resultado = resultado + botao[i] + "| :" + quantidadeDeVotos[i] + "\n";
+                resultado = resultado + botao[i] + ": " + quantidadeDeVotos[i] + " votos\n";
             }
-            resultado += "Porcentagem da Votação: \n";
+            resultado += "\nPorcentagem de cada candidato na votação: \n";
             for (int i = 0; i < 3; i++) {
-                resultado = resultado + botao[i] + "| : " + calcularPorcentagem(i) + "%\n";
+                resultado = resultado + botao[i] + ": " + calcularPorcentagem(i) + "%\n";
             }
             return resultado;
         }
@@ -113,10 +113,13 @@ public class Votacao_Ana_Priscilla extends javax.swing.JFrame {
         resultadoVotacao = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTextAreaResultadoTela = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setForeground(new java.awt.Color(255, 204, 153));
 
         jPanel2.setBackground(new java.awt.Color(42, 79, 150));
 
@@ -181,12 +184,19 @@ public class Votacao_Ana_Priscilla extends javax.swing.JFrame {
             }
         });
 
-        jLabel1.setBackground(new java.awt.Color(153, 153, 153));
+        jLabel1.setBackground(new java.awt.Color(102, 102, 102));
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel1.setForeground(new java.awt.Color(255, 153, 51));
         jLabel1.setText("Escolha seu candidato:");
 
-        jSeparator1.setForeground(new java.awt.Color(204, 204, 204));
+        jSeparator1.setBackground(new java.awt.Color(255, 204, 153));
+        jSeparator1.setForeground(new java.awt.Color(255, 204, 153));
+
+        jTextAreaResultadoTela.setBackground(new java.awt.Color(255, 255, 255));
+        jTextAreaResultadoTela.setColumns(20);
+        jTextAreaResultadoTela.setForeground(new java.awt.Color(153, 153, 153));
+        jTextAreaResultadoTela.setRows(5);
+        jScrollPane1.setViewportView(jTextAreaResultadoTela);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -211,7 +221,8 @@ public class Votacao_Ana_Priscilla extends javax.swing.JFrame {
                                         .addGap(18, 18, 18)
                                         .addComponent(votarCandidato2, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(18, 18, 18)
-                                        .addComponent(votarCandidato3, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                        .addComponent(votarCandidato3, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(jScrollPane1))
                                 .addGap(0, 0, Short.MAX_VALUE)))
                         .addGap(65, 65, 65))
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -228,17 +239,19 @@ public class Votacao_Ana_Priscilla extends javax.swing.JFrame {
                 .addComponent(jLabel2)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(89, 89, 89)
-                        .addComponent(jLabel1)
+                        .addGap(102, 102, 102)
+                        .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(votarCandidato1, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(votarCandidato2, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(votarCandidato3, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(resultadoVotacao, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(25, 25, 25))
@@ -298,19 +311,21 @@ public class Votacao_Ana_Priscilla extends javax.swing.JFrame {
         // TODO add your handling code here:
         tela.votar(1);
         //resultadoVotacao.setText(tela.exibirResultado());
+        jTextAreaResultadoTela.setText("Você votou em " + votarCandidato2.getText() + " computado com sucesso!");
     }//GEN-LAST:event_votarCandidato2ActionPerformed
 
     private void votarCandidato1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_votarCandidato1ActionPerformed
         // TODO add your handling code here:
         tela.votar(0);
         //resultadoVotacao.setText(tela.exibirResultado());
-
+        jTextAreaResultadoTela.setText("Você votou em " + votarCandidato1.getText() + " computado com sucesso!");
     }//GEN-LAST:event_votarCandidato1ActionPerformed
 
     private void votarCandidato3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_votarCandidato3ActionPerformed
         // TODO add your handling code here:
         tela.votar(2);
         //resultadoVotacao.setText(tela.exibirResultado());
+        jTextAreaResultadoTela.setText("Você votou em " + votarCandidato3.getText() + " computado com sucesso!");
     }//GEN-LAST:event_votarCandidato3ActionPerformed
 
     private void resultadoVotacaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_resultadoVotacaoActionPerformed
@@ -342,7 +357,9 @@ public class Votacao_Ana_Priscilla extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JTextArea jTextAreaResultadoTela;
     private javax.swing.JButton resultadoVotacao;
     private javax.swing.JButton votarCandidato1;
     private javax.swing.JButton votarCandidato2;
