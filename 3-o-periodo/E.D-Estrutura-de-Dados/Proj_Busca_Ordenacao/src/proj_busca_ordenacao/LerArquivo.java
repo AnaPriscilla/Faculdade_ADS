@@ -20,7 +20,7 @@ public class LerArquivo {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        Path caminho = Paths.get("C:/Users/User/Desktop/frutas.txt");
+        Path caminho = Paths.get("src\\dicionarios\\frutas.txt");
         try {
         byte[] texto = Files.readAllBytes(caminho);
         String leitura = new String(texto);
