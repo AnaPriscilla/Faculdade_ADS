@@ -2,11 +2,14 @@
 package comparando_algoritmos_ordenacao;
 
 import java.io.IOException;
+import lerCaractere.Caractere;
 
 
 public class Main {
+    
      
     public static void main(String[] args) {
+        
         int[] vetor = new int[800];
         
         for(int i=0; i < vetor.length; i++){
@@ -30,12 +33,13 @@ public class Main {
         System.out.println("Tempo: " + (fim-inicio) + "ms");
         System.out.println("Trocas: " + resultado.getTrocas());
         
+        /*
         System.out.println("\n\nInsertionSort");
         inicio = System.currentTimeMillis();
         resultado = InsertionSort.sort(vetor.clone());
         fim = System.currentTimeMillis();
         System.out.println("Tempo: " + (fim-inicio) + "ms");
-        System.out.println("Trocas: " + resultado.getTrocas());
+        System.out.println("Trocas: " + resultado.getTrocas());*/
         
         System.out.println("\n\nQuickSort");
         inicio = System.currentTimeMillis();

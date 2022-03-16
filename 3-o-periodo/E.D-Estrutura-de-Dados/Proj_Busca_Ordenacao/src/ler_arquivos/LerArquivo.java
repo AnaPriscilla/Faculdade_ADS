@@ -43,11 +43,11 @@ public class LerArquivo {
             }
         }*/
     
-    /*
+    
     //Modificando o arquivo txt. criando o padrão finalizando com ;
     public static void main(String[] args) throws FileNotFoundException {
         try {
-        FileInputStream arquivo = new FileInputStream("src\\dicionarios\\frutas.txt");
+        FileInputStream arquivo = new FileInputStream("src\\dicionarios\\Portuguese.txt");
         InputStreamReader input = new InputStreamReader(arquivo);
         BufferedReader br = new BufferedReader(input);
         
@@ -70,9 +70,9 @@ public class LerArquivo {
         }
       }
     
-    */
     
     /*
+    
     //CONTANDO CARACTERES EM UMA STRING
     private ArrayList <Character> caracteres;
     private ArrayList <Integer> quantidades;
@@ -112,6 +112,6 @@ public class LerArquivo {
         }
     }
 
-    */
+   */
     
 }

@@ -1,0 +1,5 @@
+Quantidade de palavras presentes em cada idioma escolhido:
+
+Português: 307374
+Francês: 73476
+Inglês: 48447
