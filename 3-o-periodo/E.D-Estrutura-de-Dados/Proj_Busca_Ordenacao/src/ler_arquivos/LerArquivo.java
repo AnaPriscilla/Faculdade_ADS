@@ -43,7 +43,7 @@ public class LerArquivo {
             }
         }*/
     
-    
+    /*
     //Modificando o arquivo txt. criando o padrão finalizando com ;
     public static void main(String[] args) throws FileNotFoundException {
         try {
@@ -70,8 +70,8 @@ public class LerArquivo {
         }
       }
     
+    */
     
-    /*
     
     //CONTANDO CARACTERES EM UMA STRING
     private ArrayList <Character> caracteres;
@@ -112,6 +112,6 @@ public class LerArquivo {
         }
     }
 
-   */
+   
     
 }

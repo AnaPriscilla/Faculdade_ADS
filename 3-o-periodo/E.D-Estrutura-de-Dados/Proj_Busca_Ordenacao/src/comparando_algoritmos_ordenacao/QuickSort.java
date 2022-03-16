@@ -7,7 +7,7 @@ package comparando_algoritmos_ordenacao;
 
 /**
  *
- * @author leandro
+ * @author anapriscilla
  */
 public class QuickSort {
     

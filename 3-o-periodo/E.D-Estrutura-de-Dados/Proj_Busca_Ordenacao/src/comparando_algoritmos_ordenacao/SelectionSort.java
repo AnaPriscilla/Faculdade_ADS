@@ -7,7 +7,7 @@ package comparando_algoritmos_ordenacao;
 
 /**
  *
- * @author leandro
+ * @author anapriscilla
  */
 public class SelectionSort {
     public static Resultado sort(int[] vetor){
