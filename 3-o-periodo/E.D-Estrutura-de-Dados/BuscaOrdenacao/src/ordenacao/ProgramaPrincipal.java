@@ -1,42 +1,53 @@
 package ordenacao;
 
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+/**
+ *
+ * @author anapriscilla
+ */
 
 public class ProgramaPrincipal {
 
     public static void main(String[] args) throws IOException {
         
         Scanner ler = new Scanner(System.in);
-        
+        // Cria o vetor de palavras que vai receber do dicionário
         String[] palavras = null;
-        
+        // Instancia a classe ordenacao
         Ordenacao ordem = new Ordenacao();
-        
-        String casoTeste = "****** CASO TESTE ******\n";
         
         System.out.println("------ ESCOLHA O DICIONÁRIO PARA ORDENAR ------\n");
         System.out.println("""
                            Digite 1 para: Português BR
                            Digite 2 para: Francês
-                           Digite 3 para: Inglês""");
-        
+                           Digite 3 para: Inglês""" + "\n");
+        // captura o valor digitado na tela
         int opcaoDicionario = ler.nextInt();
-
+        // Menu que vai definir o Dicionário escolhido
         switch (opcaoDicionario) {
             case 1 ->
+                // executa o método e salva o dicionario portugues no vetor de string palavras
                 palavras = obterDicionarioPortugues();
             case 2 ->
+                // executa o método e salva o dicionario frances no vetor de string palavras
                 palavras = obterDicionarioFrances();
             case 3 ->
+                // executa o método e salva o dicionario ingles no vetor de string palavras
                 palavras = obterDicionarioIngles();
             default ->
                 throw new AssertionError();
         }
-        
+        // variável para manter o menu em loop até a execucao dos testes
         boolean menuAtivo = true;
         
         do {
@@ -83,75 +94,51 @@ public class ProgramaPrincipal {
 
                     switch (opcaoAlgoritmo) {
                         case 1:
-                            long tempoinicialBubble = System.currentTimeMillis();
-                            
+                            // Executa o método bubbleSort da classe Ordenacao passando o vetor como argumento
                             ordem.bubbleSort(palavras);
-                            
-                            long tempofinalBubble = System.currentTimeMillis();
-                            long tempototalBubble = tempofinalBubble - tempoinicialBubble;
-                            
-                            casoTeste += "BubbleSort: " + tempototalBubble + " ms\n";
+                            // chama o método para criar o arquivo txt
+                            criaSaidaTxtOrdenado(palavras, "BubbleSort");
                             break;
                         case 2:
-                            long tempoinicialSelection = System.currentTimeMillis();
-                            
+                            // Executa o método selectionSort da classe Ordenacao passando o vetor como argumento
                             ordem.selectionSort(palavras);
-                            
-                            long tempofinalSelection = System.currentTimeMillis();
-                            long tempototalSelection = tempofinalSelection - tempoinicialSelection;
-                            casoTeste += "SelectionSort: " + tempototalSelection + " ms\n";
+                            // chama o método para criar o arquivo txt
+                            criaSaidaTxtOrdenado(palavras, "SelectionSort");
                             break;
                         case 3:
-                            long tempoinicialInsertion = System.currentTimeMillis();
-                            
+                            // Executa o método insertionSort da classe Ordenacao passando o vetor como argumento
                             ordem.insertionSort(palavras);
-                            
-                            long tempofinalInsertion = System.currentTimeMillis();
-                            long tempototalInsertion = tempofinalInsertion - tempoinicialInsertion;
-                            casoTeste += "InsertionSort: " + tempototalInsertion + " ms\n";
+                            // chama o método para criar o arquivo txt
+                            criaSaidaTxtOrdenado(palavras, "InsertionSort");
                             break;
                         case 4:
-                            long tempoinicialMerge = System.currentTimeMillis();
-                            
+                            // Executa o método mergeSort da classe Ordenacao passando o vetor como argumento
                             ordem.mergeSort(palavras);
-                            
-                            long tempofinalMerge = System.currentTimeMillis();
-                            long tempototalMerge = tempofinalMerge - tempoinicialMerge;
-                            casoTeste += "MergeSort: " + tempototalMerge + " ms\n";
+                            // chama o método para criar o arquivo txt
+                            criaSaidaTxtOrdenado(palavras, "MergeSort");
                             break;
                         case 5:
-                            long tempoinicialQuick = System.currentTimeMillis();
-                            
+                            // Executa o método quickSort da classe Ordenacao passando o vetor como argumento
                             ordem.quickSort(palavras);
-                            
-                            long tempofinalQuick = System.currentTimeMillis();
-                            long tempototalQuick = tempofinalQuick - tempoinicialQuick;
-                            casoTeste += "QuickSort: " + tempototalQuick + " ms\n";
+                            // chama o método para criar o arquivo txt
+                            criaSaidaTxtOrdenado(palavras, "QuickSort");
                             break;
                         default:
                             throw new AssertionError();
                     }
                     break;
                 case 2:
-                    long tempoinicialBuscaSeq = System.currentTimeMillis();
-                    
+                    // Executa o método BuscaSeq da classe Ordenacao passando o vetor como argumento, 
+                    //e o index da palavra a ser pesquisada
                     ordem.BuscaSeq(palavras, palavras[48000]);
-                    
-                    long tempofinalBuscaSeq = System.currentTimeMillis();
-                    long tempototalBuscaSeq = tempofinalBuscaSeq - tempoinicialBuscaSeq;
-                    casoTeste += "Busca Sequencial: " + tempototalBuscaSeq + " ms\n";
-                    
-                    long tempoinicialBuscaBin = System.currentTimeMillis();
 
-                    ordem.BuscaBin(palavras, palavras[48000], 0, palavras.length - 1);
-                    
-                    long tempofinalBuscaBin = System.currentTimeMillis();
-                    long tempototalBuscaBin = tempofinalBuscaBin - tempoinicialBuscaBin;
-                    casoTeste += "Busca Binária: " + tempototalBuscaBin + " ms\n";
+                    // Executa o método BuscaBin da classe Ordenacao passando o vetor como argumento, 
+                    //e o index da palavra a ser pesquisada
+                    //antes de realizar a busca a ordenação + busca
+                    ordem.BuscaBin(palavras, palavras[0], 0, palavras.length - 1);
+
                     break;
                 case 3:
-                    System.out.println(casoTeste);
-                    System.out.println("------------------");
                     menuAtivo = false;
                     break;
                 default:
@@ -159,11 +146,15 @@ public class ProgramaPrincipal {
             }
         } while (menuAtivo);
 
-        /*for(String p : palavras) {
-            System.out.println("palavra: " + p);
-        }*/
+        // Imprime a variável casoTeste que contém todos os resultados concatenados
+        System.out.println(ordem.getCasoTeste());
+        System.out.println("------------------");
     }
     
+    /**
+     * Método privado para ler o arquivo txt Portugues e salvar os dados no vetor de string
+     * @return vetor de string palavras
+     */
     private static String[] obterDicionarioPortugues() {
         String[] palavras = new String[307374];
         try {
@@ -189,6 +180,10 @@ public class ProgramaPrincipal {
         return palavras;
     }
     
+    /**
+     * Método privado para ler o arquivo txt Ingles e salvar os dados no vetor de string
+     * @return vetor de string palavras
+     */
     private static String[] obterDicionarioIngles() {
         String[] palavras = new String[48447];
         try {
@@ -214,6 +209,10 @@ public class ProgramaPrincipal {
         return palavras;
     }
     
+    /**
+     * Método privado para ler o arquivo txt Frances e salvar os dados no vetor de string
+     * @return vetor de string palavras
+     */
     private static String[] obterDicionarioFrances() {
         String[] palavras = new String[73476];
         try {
@@ -238,4 +237,56 @@ public class ProgramaPrincipal {
         }
         return palavras;
     }
+    
+    /**
+     * método que cria arquivo txt com vetor de string ordenado
+     * @param palavras (vetor de string)
+     * @param algoritmoEscolhido (nome do algoritmo que ordenou)
+     */
+    private static void criaSaidaTxtOrdenado(String[] palavras, String algoritmoEscolhido) {
+        // Cria string para setar o nome do arquivo
+        String nomeArquivo = "";
+        switch (algoritmoEscolhido) {
+            case "BubbleSort":
+                nomeArquivo = "SaidaBubbleSort.txt";
+                break;
+            case "InsertionSort":
+                nomeArquivo = "SaidaInsertionSort.txt";
+                break;
+            case "SelectionSort":
+                nomeArquivo = "SaidaInsertionSort.txt";
+                break;
+            case "MergeSort":
+                nomeArquivo = "SaidaMergeSort.txt";
+                break;
+            case "QuickSort":
+                nomeArquivo = "SaidaQuickSort.txt";
+                break;
+            default:
+                throw new AssertionError();
+        }
+        // Cria file informando o diretório e nome do arquivo
+        File filename = new File("src\\dicionarios\\"+nomeArquivo);
+
+        try {
+            // verifica se existe o file, se nao existe cria, se existe deleta e cria
+            if (!filename.exists()) {
+                filename.createNewFile();
+            } else {
+                filename.delete();
+                filename.createNewFile();
+            }
+            // Criando objetos para gravar/escrever no txt
+            FileWriter fw = new FileWriter(filename.getAbsoluteFile());
+            BufferedWriter bw = new BufferedWriter(fw);
+            // iterar no vetor de string para escrever as palavras no arquivo
+            for (String str : palavras) {
+                bw.write("\n");
+                bw.write(str);
+            }
+        } catch (IOException ex) {
+            Logger.getLogger(ProgramaPrincipal.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
 }

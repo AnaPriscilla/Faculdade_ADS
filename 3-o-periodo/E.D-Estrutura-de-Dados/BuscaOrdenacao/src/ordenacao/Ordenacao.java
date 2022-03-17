@@ -1,6 +1,14 @@
 package ordenacao;
 
+/**
+ *
+ * @author anapriscilla
+ */
+
 public class Ordenacao {
+    
+    // Variável que vai concatenar todos resultados de teste para imprimir na tela
+    private String casoTeste = "****** CASO TESTE ******\n";
 
     public String[] insertionSort(String[] vetor) {
         long tempoinicial = System.currentTimeMillis();
@@ -15,6 +23,7 @@ public class Ordenacao {
         }
         long tempofinal = System.currentTimeMillis();
         long tempototal = tempofinal - tempoinicial;
+        this.casoTeste += "InsertionSort: " + tempototal + " ms\n";
         System.out.println("Tempo de Processamento de InsertionSort: " + tempototal + " ms");
         return vetor;
     }
@@ -35,6 +44,7 @@ public class Ordenacao {
         }
         long tempofinal = System.currentTimeMillis();
         long tempototal = tempofinal - tempoinicial;
+        this.casoTeste += "SelectionSort: " + tempototal + " ms\n";
         System.out.println("Tempo de Processamento de SelectionSort: " + tempototal + " ms");
         return vetor;
     }
@@ -52,6 +62,7 @@ public class Ordenacao {
         }
         long tempofinal = System.currentTimeMillis();
         long tempototal = tempofinal - tempoinicial;
+        this.casoTeste += "BubbleSort: " + tempototal + " ms\n";
         System.out.println("Tempo de Processamento de BubbleSort: " + tempototal + " ms");
         return vetor;
     }
@@ -61,6 +72,7 @@ public class Ordenacao {
         MergeSort.mergeSort(array, array.length);
         long tempofinal = System.currentTimeMillis();
         long tempototal = tempofinal - tempoinicial;
+        this.casoTeste += "MergeSort: " + tempototal + " ms\n";
         System.out.println("Tempo de Processamento de MergeSort: " + tempototal + " ms");
         return array;
     }
@@ -71,6 +83,7 @@ public class Ordenacao {
         //QuickSort.quickSort(array, 0);
         long tempofinal = System.currentTimeMillis();
         long tempototal = tempofinal - tempoinicial;
+        this.casoTeste += "QuickSort: " + tempototal + " ms\n";
         System.out.println("Tempo de Processamento de QuickSort: " + tempototal + " ms");
         return array;
     }
@@ -83,33 +96,51 @@ public class Ordenacao {
             if (x.equals(A[i])) {
                 long tempofinal = System.currentTimeMillis();
                 long tempototal = tempofinal - tempoinicial;
-                System.out.println("Tempo de Processamento de BuscaSeq: " + tempototal + " ms");
+                this.casoTeste += "Busca Sequencial: " + tempototal + " ms\n";
+                System.out.println("Tempo de processamento da busca sequencial: " + tempototal + " ms");
                 return saida = A[i];
             }
         }
+        long tempofinal = System.currentTimeMillis();
+        long tempototal = tempofinal - tempoinicial;
+        this.casoTeste += "Busca Sequencial: " + tempototal + " ms\n";
+        System.out.println("Tempo de processamento da busca sequencial: " + tempototal + " ms");
         return saida;
     }
  
     public String BuscaBin(String A[], String x, int inicio, int fim) {
+        long tempoinicial = System.nanoTime();
         String saida = "Nao encontrado";
         int meio;
         if (inicio > fim) {
+            long tempofinal = System.nanoTime();
+            long tempototal = tempofinal - tempoinicial;
+            this.casoTeste += "Busca Binária em nanosegundos: " + tempototal + " ns\n";
+            System.out.println("Tempo de processamento da busca binária em nanosegundos: " + tempototal + " ns");
             return saida; // false;
         }
         meio = (inicio + fim) / 2;
         //System.out.println(meio + " " + inicio + " " + fim);
         if (x == A[meio]) {
+            long tempofinal = System.nanoTime();
+            long tempototal = tempofinal - tempoinicial;
+            this.casoTeste += "Busca Binária em nanosegundos: " + tempototal + " ns\n";
+            System.out.println("Tempo de processamento da busca binária em nanosegundos: " + tempototal + " ns");
             return saida = A[meio]; // true;
         } else if (x.compareToIgnoreCase(A[meio]) < 0) {
             return (BuscaBin(A, x, inicio, meio - 1));
         } else {
             return (BuscaBin(A, x, meio + 1, fim));
-        }
+        }    
     }
 
     public void imprimirVetor(int[] array) {
         for (int counter = 0; counter < (array.length - 1); counter++) {
             System.out.println(array[counter]);
         }
+    }
+    
+    public String getCasoTeste() {
+        return this.casoTeste;
     }
 }

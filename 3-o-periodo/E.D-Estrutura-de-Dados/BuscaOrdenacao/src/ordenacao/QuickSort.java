@@ -1,55 +1,53 @@
 package ordenacao;
 
+/**
+ *
+ * @author anapriscilla
+ */
+
 public class QuickSort {
  
-
-    public static String[] quicksort(String vet[], int ini, int fim) {
+    public static String[] quicksort(String vetor[], int inicio, int fim) {
 
         int meio;
 
-        if (ini < fim) {
+        if (inicio < fim) {
 
-            meio = partition(vet, ini, fim);
+            meio = partition(vetor, inicio, fim);
 
-            quicksort(vet, ini, meio);
+            quicksort(vetor, inicio, meio);
 
-            quicksort(vet, meio + 1, fim);
+            quicksort(vetor, meio + 1, fim);
 
         }
         
-        return vet;
-
+        return vetor;
     }
 
- 
-
-    public static int partition(String vet[], int ini, int fim) {
+    public static int partition(String vetor[], int inicio, int fim) {
 
         int pivo, topo, i;
 
-        pivo = vet[ini].length();
+        pivo = vetor[inicio].length();
 
-        topo = ini;
+        topo = inicio;
 
- 
+        for (i = inicio + 1; i <= fim; i++) {
 
-        for (i = ini + 1; i <= fim; i++) {
+            if (vetor[i].length() < pivo) {
 
-            if (vet[i].length() < pivo) {
+                vetor[topo] = vetor[i];
 
-                vet[topo] = vet[i];
-
-                vet[i] = vet[topo + 1];
+                vetor[i] = vetor[topo + 1];
 
                 topo++;
 
             }
-
         }
 
-        vet[topo] = vet[pivo];
+        vetor[topo] = vetor[inicio];
 
         return topo;
-
-    }
+    }  
+    
 }
