@@ -4,7 +4,7 @@ package fabrica;
 import brinquedos.*;
 /**
  *
- * @author ejmcc
+ * @author anapriscilla
  */
 
 
