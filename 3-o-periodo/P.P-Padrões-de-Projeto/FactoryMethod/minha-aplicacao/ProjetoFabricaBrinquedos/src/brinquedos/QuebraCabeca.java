@@ -7,7 +7,7 @@ package brinquedos;
 
 /**
  *
- * @author ejmcc
+ * @author anapriscilla
  */
 public class QuebraCabeca extends Brinquedo{
     
