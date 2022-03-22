@@ -25,5 +25,10 @@ import model_Ana_Priscilla.Votacao;
         public String exibirResultado() {
             return voto.resultadoDaVotacao();
         }
+        
+        /*
+        public void validacaoDoRegistro() {
+             
+        }*/
     }
 

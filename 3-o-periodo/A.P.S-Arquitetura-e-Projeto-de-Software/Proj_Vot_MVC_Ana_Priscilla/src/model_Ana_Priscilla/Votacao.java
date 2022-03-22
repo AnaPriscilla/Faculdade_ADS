@@ -43,5 +43,14 @@ public class Votacao {
             }
             return resultado;
         }
+        
+        /*
+        //Validação dos dados
+        public String validacaoDoRegistro(){
+            
+            return null;
+            
+        }*/
+
     }
 

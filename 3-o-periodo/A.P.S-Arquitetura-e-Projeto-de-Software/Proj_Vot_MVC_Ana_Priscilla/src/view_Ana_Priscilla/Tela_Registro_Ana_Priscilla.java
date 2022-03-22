@@ -3,6 +3,10 @@
  */
 package view_Ana_Priscilla;
 
+import java.awt.event.KeyEvent;
+import javax.swing.JOptionPane;
+import model_Ana_Priscilla.Votacao;
+
 /**
  *
  * @author anapriscilla
@@ -20,6 +24,7 @@ public class Tela_Registro_Ana_Priscilla extends javax.swing.JFrame {
     /*Para centralizar a tela */
     public void initComplementos() {
         this.setLocationRelativeTo(null);
+        
     }
     
     /*Chamando a proxima janela*/
@@ -82,18 +87,33 @@ public class Tela_Registro_Ana_Priscilla extends javax.swing.JFrame {
         jLabel3.setText("1º Candidato:");
 
         nomeCandidato1.setBackground(new java.awt.Color(255, 255, 255));
+        nomeCandidato1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                nomeCandidato1KeyTyped(evt);
+            }
+        });
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(102, 102, 102));
         jLabel4.setText("2º Candidato:");
 
         nomeCandidato2.setBackground(new java.awt.Color(255, 255, 255));
+        nomeCandidato2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                nomeCandidato2KeyTyped(evt);
+            }
+        });
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(102, 102, 102));
         jLabel5.setText("3º Candidato:");
 
         nomeCandidato3.setBackground(new java.awt.Color(255, 255, 255));
+        nomeCandidato3.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                nomeCandidato3KeyTyped(evt);
+            }
+        });
 
         jLabel6.setIcon(new javax.swing.ImageIcon("C:\\Users\\User\\Downloads\\vote 1 (1).png")); // NOI18N
         jLabel6.setText("jLabel6");
@@ -164,27 +184,70 @@ public class Tela_Registro_Ana_Priscilla extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // Pegando os dados digitados pelo usuário
-       if(!nomeCandidato1.getText().isEmpty() && !nomeCandidato2.getText().isEmpty() 
-          && !nomeCandidato3.getText().isEmpty()){
-           if(votacao==null){
-               votacao = new Tela_Votacao_Ana_Priscilla();
-               votacao.setLocationRelativeTo(null);
-               votacao.setVisible(true);
-               votacao.setResizable(false);
-           } else {
-               votacao.setLocationRelativeTo(null);
-               votacao.setVisible(true);
-               votacao.setResizable(false);
-           }
-           
-           votacao.enviaPalavra(this, nomeCandidato1.getText());
-           votacao.enviaPalavra2(this, nomeCandidato2.getText());
-           votacao.enviaPalavra3(this, nomeCandidato3.getText());
-           this.dispose();
+         //Tratamento de exceção para campos vazios ou repetidos
+         if(nomeCandidato1.getText().equals("") || nomeCandidato2.getText().equals("")|| nomeCandidato3.getText().equals("")
+            ||nomeCandidato1.getText().toUpperCase().equals(nomeCandidato2.getText().toUpperCase())||nomeCandidato1.getText().toUpperCase().equals(nomeCandidato3.getText().toUpperCase())
+            ||nomeCandidato2.getText().toUpperCase().equals(nomeCandidato1.getText().toUpperCase())||nomeCandidato2.getText().toUpperCase().equals(nomeCandidato3.getText().toUpperCase())
+            ||nomeCandidato3.getText().toUpperCase().equals(nomeCandidato1.getText().toUpperCase())||nomeCandidato3.getText().toUpperCase().equals(nomeCandidato2.getText().toUpperCase())
+          ){ 
+             JOptionPane.showMessageDialog(this, " | ERRO | CAMPO VAZIO OU CANDIDATO REPETIDO");  
+         } else {
+                // Pegando os dados digitados pelo usuário
+                if(!nomeCandidato1.getText().isEmpty() && !nomeCandidato2.getText().isEmpty() 
+                   && !nomeCandidato3.getText().isEmpty()){
+                    if(votacao==null){
+                        votacao = new Tela_Votacao_Ana_Priscilla();
+                        votacao.setLocationRelativeTo(null);
+                        votacao.setVisible(true);
+                        votacao.setResizable(false);
+
+                    } else {
+                        votacao.setLocationRelativeTo(null);
+                        votacao.setVisible(true);
+                        votacao.setResizable(false);
+                    }
+
+                    votacao.enviaPalavra(this, nomeCandidato1.getText());
+                    votacao.enviaPalavra2(this, nomeCandidato2.getText());
+                    votacao.enviaPalavra3(this, nomeCandidato3.getText());
+                    this.dispose();  
   
-       }
+            }
+        }
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    //Tratamento de exceção para não deixar digitar inteiros no lugar de String
+    private void nomeCandidato1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_nomeCandidato1KeyTyped
+
+        char candidato1=evt.getKeyChar();
+        //Aqui verificamos se o que foi digitado é um número, um backspace ou um delete. Se for, consumimos o evento, ou seja, o jTextField não receberá o valor digitado
+        if((Character.isDigit(candidato1) || (candidato1==KeyEvent.VK_BACK_SPACE) || candidato1==KeyEvent.VK_DELETE)){
+        evt.consume();
+        JOptionPane.showMessageDialog(this, " | Erro | NÃO ACEITA NÚMEROS SOMENTE LETRAS");
+        }                  
+       
+    }//GEN-LAST:event_nomeCandidato1KeyTyped
+
+    private void nomeCandidato2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_nomeCandidato2KeyTyped
+
+        char candidato2=evt.getKeyChar();
+        
+        if((Character.isDigit(candidato2) || (candidato2==KeyEvent.VK_BACK_SPACE) || candidato2==KeyEvent.VK_DELETE)){
+        evt.consume();
+        JOptionPane.showMessageDialog(this, " | Erro | NÃO ACEITA NÚMEROS SOMENTE LETRAS");
+        }                 
+       
+    }//GEN-LAST:event_nomeCandidato2KeyTyped
+
+    private void nomeCandidato3KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_nomeCandidato3KeyTyped
+
+        char candidato3=evt.getKeyChar();
+        
+        if((Character.isDigit(candidato3) || (candidato3==KeyEvent.VK_BACK_SPACE) || candidato3==KeyEvent.VK_DELETE)){
+        evt.consume();
+        JOptionPane.showMessageDialog(this, " | Erro | NÃO ACEITA NÚMEROS SOMENTE LETRAS");
+        }   
+    }//GEN-LAST:event_nomeCandidato3KeyTyped
 
     /**
      * @param args the command line arguments
