@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <meta name="author" content="Ana Priscilla Furtado">
+        <meta name="description" content="Website Concessionária Bete SA | Arquitetura e Projeto de Software">
+        <meta name="keywords" content="website, concessionaria bete sa, projeto de software, cadastro veiculo">
+        <title>Home - Concessionária Bete SA</title>
+        <link rel="shortcut icon" href="images/fav.png" type="image"/>
+        <link rel="stylesheet" href="css/styles.css" type="text/css">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <header class="headerPage">
+            <div class="headerItens">
+                <img class="logoBeteSA" src="images/logoBeteSA.png" alt="logo bete sa concessionaria">
+                <nav class="menu">
+                    <ul>
+                        <li><a href="#linkQuemSomos">Quem somos</a></li>
+                        <li><a href="#linkProdutos">Produtos Oferecidos</a></li>
+                        <li><a href="#linkContato">Contato</a></li>
+                    </ul>
+                </nav>
+                <div class="menuCadastrar">
+                    <button id="cadastrar">
+                        <img src="images/iconRegister.png" alt="icon cadastrar">
+                        Cadastro
+                    </button>
+                    <div class="pagesCadastros">
+                      <a href="./pages/formClient.html">Cadastrar Pessoa</a>
+                      <a href="./pages/formCar.html">Cadastrar Veículo</a>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <main class="articlePage" id="topo">
+            <section class="infosBanner">
+                <div class="colunaInfos">
+                    <div class="tituloSubtitulo">
+                        <h3>Bem vindos,</h3>
+                        <h1>A Concessionária Bete SA<h1>
+                        <h2><span>Vendemos veículos</span> novos</h2>
+                        <h2>e semi-novos</h2>
+                        <p>Somos uma empresa que domina o mercado há mais de 25 anos.</p>
+                        <p>O nosso diferencial é a qualidade o preço e satisfação.</p> 
+                        <h4>Venha nos conhecer!</h4>
+                    </div>
+                    <div class="buttons">
+                        <a href="#">
+                            <div class="zeroKM">
+                                <p>Comprar zero km</p>
+                            </div>
+                        </a>
+    
+                        <a href="#">
+                            <div class="semiNovo">
+                                <p>comprar semi-novo</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="localizacao">
+                        <img src="images/iconLocation.png" alt="icon localizacao">
+                        <p>Rua 230-A, Setor Aeroporto, Goiânia-GO</p>
+                    </div>
+                </div>
+
+                <div class="colunaBannerPrincipal">
+                    <img src="images/bannerPrincipal.png" alt="banner principal">
+                </div>
+            </section>
+
+            <section class="quemSomos" id="linkQuemSomos">
+                <div class="bannerLateral">
+                    <img src="images/bannerlateral.png" alt="banner carro cinza">
+                </div>
+                <div class="infoQuemSomos">
+                    <h3>Quem somos:</h3>
+                    <p>
+                        — Estamos no mercado <span>desde 1997</span> realizando a entrega de veículos novos e semi-novos. Nossa história é feita sobretudo de dedicação ao cliente. Temos entregado durante todos esses anos ótimos resultados no mercado. Sempre oferecemos um preço justo, rapidez e atendimento de qualidade, assim geramos os pilares que vêm construindo nosso nome. Portanto, estamos sempre destacando o nosso diferencial, que consiste em:
+                    </p>
+                    <ul>
+                        <li>Qualidade.</li>
+                        <li>Preço.</li>
+                        <li>Satisfação.</li>
+                    </ul>
+                    <div id="linkProdutos"></div>
+                </div>
+
+            </section>
+            <section class="produtosOferecidos">
+                <div>
+                    <h3>Produtos Oferecidos &rarr;</h3>
+                </div>
+                <div class="cardsProdutos">
+                    <div class="cardNovos">
+                        <div class="headerCard">
+                            <br><br>
+                        </div>
+                        <div class="bodyCard">
+                            <img src="images/cardNovo.png" alt="">
+                            <div class="descricao">
+                                <p>Venha conhecer os lançamentos do mercado auto-mobilistico!</p>
+                            </div>
+                        </div>
+                        <div class="footerCard">
+                          
+                            <a href="#">
+                                <div class="button">
+                                    <p>CONHECER &rarr; Novos (0 KM)</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="cardSemi">
+                        <div class="headerCard">
+                            <p> Entrega do veículo vistoriado!</p>
+                        </div>
+                        <div class="bodyCard">
+                            <img src="images/cardSemi.png" alt="">
+                            <div class="descricao">
+                                <p>Quer um semi-novo de excelente procedência? </p>
+                            </div>
+                        </div>
+                        <div class="footerCard">
+                            <a href="#">
+                                <div class="button">
+                                    <p>VER &rarr; Semi-novos</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footerPage">
+            <section class="backgroundFooter">
+                <div class="contato" id="linkContato">
+                    <div class="atendimento">
+                        <h4>Contato:</h4>
+                        <div class="atendCliente">
+                            <img src="images/iconHeadphone.png" alt="icone atendimento">
+                            <p>Atendimento ao cliente:</p>
+                        </div>
+                        <h2>(62) 22009-0765</h2>
+                        <a href="#">
+                            <div class="buttonWhats">
+                                <img src="images/iconWhats.png" alt="icone whatsapp">
+                                <p>Venha fazer seu orçamento</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="redeSocial">
+                        <h5>Nossas redes sociais:</h5>
+                        <div class="media">
+                            <a href="#">
+                                <img src="images/iconTik.png" alt="icone tiktok">
+                            </a>
+                            <a href="#">
+                                <img src="images/iconTwitter.png" alt="icone twitter">
+                            </a>
+                            <a href="#">
+                                <img src="images/iconFace.png" alt="icone facebook">
+                            </a>
+                            <a href="#">
+                                <img src="images/iconYou.png" alt="icone youtube">
+                            </a>
+                            <a href="#">
+                                <img src="images/iconInsta.png" alt="icone instagram">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <section class="footerItens">
+                    <img src="images/chaves.png" alt="chaves">
+                    <div class="copyright">
+                        <p>&copy; Todos os direitos reservados | Design e Desenvolvimento por<a href="https://github.com/AnaPriscilla" target="_blank"> <span>Ana Priscilla F.</span></a> | 2022</p>
+                    </div>
+                    <a href="#topo">
+                        <img class="up" src="images/iconUp.png" alt="up">
+                    </a>
+                </section>
+
+            </section>
+           
+        </footer>
+    </body>
+</html>

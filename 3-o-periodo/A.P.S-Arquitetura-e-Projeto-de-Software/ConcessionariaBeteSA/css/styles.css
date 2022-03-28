@@ -1,0 +1,699 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.headerPage {
+    position: fixed;
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 0px 0px 30px 0px rgba(170, 170, 170, 0.1);
+    z-index: 1;
+}
+
+.headerItens {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 25px 50px 20px 50px;
+} 
+
+.headerItens .logoBeteSA {width: 200px;}
+
+.headerItens .menu {list-style: none;}
+
+.headerItens .menu ul li {
+    display: inline;
+    padding: 0px 8px;
+    text-transform: uppercase;
+}
+
+.headerItens .menu ul li a {
+	padding: 2px 8px;
+	display: inline-block;
+	text-decoration: none;
+    color: #494949;
+    font-weight: 500;
+    border-top: 2px solid #fff;
+}
+
+.headerItens ul li a:hover {
+    color: #FF8A48;
+    border-top: 2px solid #FF8A48;
+}
+
+.menuCadastrar #cadastrar  img {
+    width: 18px;
+    margin-right: 5px;
+}
+
+.menuCadastrar #cadastrar {display: flex;}
+
+#cadastrar {
+    color: #FF8A48;
+    padding:  5px 15px;
+    font-size: 16px;
+    border: none;
+    background-color: #fff;
+}
+
+.menuCadastrar {
+    position: relative;
+    display: inline-block;
+}
+  
+.pagesCadastros {
+    display: none;
+    position: absolute;
+    min-width: 150px;
+    box-shadow: 0px 5px 20px 0px rgba(0,0,0,0.1);
+    background-color: #fff;
+    z-index: 5;
+    text-align: center;
+}
+  
+.pagesCadastros a {
+    color: #494949;
+    padding: 10px 15px;
+    text-decoration: none;
+    display: block;
+    font-size: 14px;
+}
+  
+.pagesCadastros a:hover {
+    background-color: #FF8A48;
+    color: #fff;
+}
+  
+.menuCadastrar:hover .pagesCadastros {display: block;}
+  
+.articlePage .infosBanner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 150px 0px 20px 100px;
+}
+
+.infosBanner .colunaBannerPrincipal img {
+    width: 100%;
+}
+
+.colunaInfos .tituloSubtitulo h3 {
+    text-transform: uppercase;
+    font-weight: 400;
+    color: #5F5F5F;
+    font-size: 30px;
+}
+
+.colunaInfos .tituloSubtitulo h2 {
+    text-transform: uppercase;
+    font-weight: 900;
+    color: #494949;
+    font-size: 45px;
+}
+
+.colunaInfos .tituloSubtitulo h2 span {
+    color: #FF8A48;
+}
+
+.colunaInfos .tituloSubtitulo h1 {
+    color: #494949;
+    font-weight: 400;
+    text-transform: uppercase;
+}
+
+.colunaInfos .tituloSubtitulo h4 {
+    font-size: 22px;
+    color: #5F5F5F;
+    text-transform: uppercase;
+    margin-top: 10px;
+}
+
+.colunaInfos .buttons {
+    margin: 25px 0;
+    display: flex;
+}
+
+.colunaInfos,
+.colunaBannerPrincipal { width: 70%;}
+
+.colunaInfos .buttons .zeroKM,
+.colunaInfos .buttons .semiNovo {
+    background-color: #fff;
+    padding: 25px 0px 25px 0px;
+    border: 2px solid #FF8A48;
+    border-radius: 20px;
+    font-size: 18px;
+    text-transform: uppercase;
+    font-weight: 900;
+    color: #FF8A48;
+    text-align: center;
+    width: 20rem;
+    box-shadow: 0px 8px 8px 0px rgba(0,0,0,0.1);
+}
+
+.colunaInfos .buttons a {
+    margin: 20px 20px 0px 0px;
+    text-decoration: none;
+}
+
+.colunaInfos .buttons .zeroKM:hover,
+.colunaInfos .buttons .semiNovo:hover {
+    background-color: #FF8A48;
+    color: #fff;
+}
+
+.colunaInfos .localizacao {
+    display: flex;
+    align-items: center;
+    margin-top: 100px;
+}
+
+.colunaInfos .localizacao img {
+    width: 12px;
+    margin-right: 5px;
+}
+
+.articlePage .quemSomos {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.articlePage .quemSomos .infoQuemSomos {
+    margin-right: 50px;
+    text-align: justify;
+    color: #636363;
+    border-top: 2px solid #FF8A48;
+    border-bottom: 2px solid #FF8A48;
+    padding: 100px 20px 100px 50px;
+}
+
+.articlePage .quemSomos .infoQuemSomos h3 {
+    font-size: 22px;
+    text-transform: uppercase;
+    color: #494949;
+    margin-bottom: 25px;
+}
+
+.articlePage .quemSomos .infoQuemSomos span {
+    color: #FF8A48;
+    font-style: italic;
+}
+
+.infoQuemSomos ul {
+    list-style: none;
+    margin-top: 15px;
+}
+
+.infoQuemSomos ul li::before {
+    content: "↪";
+    margin-right: 10px;
+    font-weight: bold;
+    color: #FF8A48;
+}
+
+.articlePage .produtosOferecidos {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.produtosOferecidos h3 {
+    font-size: 22px;
+    text-transform: uppercase;
+    color: #494949;
+    margin-bottom: 25px;
+}
+
+.cardsProdutos { display: flex;}
+
+.cardsProdutos .cardSemi { margin-left: 30px;}
+
+.cardsProdutos .cardNovos,
+.cardsProdutos .cardSemi {
+    width: 300px;
+    border-radius: 20px;
+    background-color: #fff;   
+}
+
+.cardsProdutos .cardSemi .headerCard {
+    background-color: #FF8A48;
+    padding: 10px 25px;
+    border-radius: 25px 25px 0px 0px;
+}
+
+.cardsProdutos .cardSemi .headerCard p {
+    text-align: center;
+    color: #fff;
+}
+
+.cardsProdutos .cardNovos .bodyCard img,
+.cardsProdutos .cardSemi .bodyCard img { width: 100%;}
+
+.cardsProdutos .cardNovos .bodyCard,
+.cardsProdutos .cardNovos .bodyCard img { border-radius: 25px 25px 0px 0px;}
+
+.cardsProdutos .bodyCard { box-shadow: 0px 0px 30px 0px rgba(170, 170, 170, 0.5);}
+
+.cardsProdutos .bodyCard .descricao p {
+    text-align: center;
+    color: #636363;
+    padding: 20px 0px 20px 0px;
+    background-color: #fff;
+}
+
+.cardsProdutos .footerCard a {text-decoration: none;}
+
+.cardsProdutos .footerCard .button {
+    padding: 25px 0px 25px 0px;
+    box-shadow: 0px 0px 30px 0px rgba(170, 170, 170, 0.2);
+    background-color: #fff;
+    color: #FF8A48;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 0px 0px 20px 20px;
+    text-transform: uppercase;
+}
+
+.cardsProdutos .footerCard .button:hover {
+    background-color: #FF8A48;
+    color: #fff;
+}
+
+.footerPage .contato .atendimento h4 {
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.backgroundFooter {
+    width: 100%;
+    background-image: url('../images/background.png');
+    background-position: center;
+    background-size: cover;
+    height: 515px;
+}
+
+.contato {
+    padding: 120px 80px 0px 50px;
+    display: flex;
+    align-items: center;
+}
+
+.contato .atendCliente {
+    display: flex;
+    margin-left: 3px;
+    margin-bottom: 2px;
+}
+
+.contato .atendCliente img {
+    width: 15px;
+    height: 18px;
+    margin-right: 10px;
+}
+
+.contato .atendCliente p {color: #fff;}
+
+.contato .atendimento h2 {
+    color: #fff;
+    font-size: 30px;
+    margin-bottom: 30px;
+}
+
+.contato .buttonWhats {
+    display: flex;
+    align-items: center;
+}
+
+.contato .buttonWhats img {
+    width: 30px;
+    margin-right: 10px;
+}
+
+.contato a  {text-decoration: none;}
+
+.contato .buttonWhats {
+    background-color: #FF8A48;
+    padding: 15px 20px;
+    border-radius: 20px;
+    color: #fff;
+}
+
+.contato .buttonWhats:hover {background-color: #f38647;}
+
+.contato .redeSocial {margin-left: 100px;}
+
+.contato .redeSocial h5 {
+    color: #fff;
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0px 0px 10px 5px;
+}
+
+.contato .redeSocial img {
+    width: 40px;
+    border: 2px solid #494949;
+}
+
+.contato .redeSocial img:hover {
+    border: 2px solid #f38647;
+    border-radius: 10px;
+    transform: scale(1.2);
+    transition: all 0.5s ease-in-out;
+}
+
+.footerPage .footerItens .up {margin: 20px 140px 0px 0px;}
+
+.footerPage .footerItens {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 65px 50px 0px 50px;
+}
+
+.footerPage .footerItens .copyright {
+    color: #fff;
+    font-size: 12px;
+    margin-top: 20px;
+}
+
+.footerPage .footerItens .copyright a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.footerPage .footerItens .copyright span {
+    border-bottom: 2px solid #494949;
+    margin: 0px 2px 0px 2px;
+}
+
+.footerPage .footerItens .copyright span:hover {
+    border-bottom: 2px solid #fff;
+    margin: 0px 2px 0px 2px;
+}
+
+/*FORMULÁRIO PESSOA FÍSICA*/
+.headerForm {
+    background-color: #FF8A48;
+    position: fixed;
+    width: 100%;
+}
+
+.headerFormItens {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 20px 100px;
+}
+
+.subTituloForm h1 {
+    color: #fff;
+    font-size: 20px;
+}
+
+.subTituloForm p {
+    font-size: 11px;
+    color: #fff;
+}
+
+.headerFormItens a {
+    text-decoration: none;
+    border-top: 2px solid #FF8A48;
+    color: #fff;
+    padding: 3px;
+}
+
+.headerFormItens a:hover {border-top: 2px solid #fff;}
+
+.headerFormItens .tituloHeaderForm {
+    display: flex;
+    align-items: center;
+}
+
+.headerFormItens .tituloHeaderForm img {
+    width: 35px;
+    height: 35px;
+    margin-right: 5px;
+}
+
+.mainForm {padding: 130px 150px 0px 150px;}
+
+.formPessoa,
+.formVeiculo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.formPessoa fieldset,
+.formVeiculo fieldset {
+    border: 2px solid #FF8A48;
+    border-radius: 10px;
+    padding: 15px;
+}
+
+.formPessoa legend,
+.formVeiculo legend {
+    font-size: 18px;
+    color: #FF8A48;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.formPessoa label,
+.formVeiculo label {
+    color: #5c5c5c;
+    margin-left: 20px;
+}
+
+.formPessoa input,
+.formVeiculo input {
+    border: 1px solid rgb(160, 160, 160);
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.formPessoa select,
+.formVeiculo select {
+    border: 1px solid rgb(160, 160, 160);
+    padding: 13px;
+    border-radius: 5px;
+}
+  
+select:hover,
+select:focus,
+select:active,
+select:focus {
+    border: 1px solid #FF8A48;
+    cursor: pointer;
+}
+  
+select option {
+    color: #494949;
+    padding-right: 5px;
+}
+  
+select option:active {
+    background-color: #FF8A48;
+    color: #fff;
+}
+  
+option[value=""][disabled] { color: #5c5c5c;}
+
+input[type=text],
+input[type=tel] {
+    padding: 12px 10px;
+    margin: 10px 0;
+    box-sizing: border-box;
+    outline: none;
+    font-size: 15px;
+}
+
+input[type=text]:focus,
+input[type=tel]:focus  {
+    border: 1px solid #FF8A48;
+    color:black;
+}
+
+.dadosPessoais, .dadosConjuge,
+.dadosReferencia {
+    width: 1150px;
+}
+
+.dadosConjuge,
+.dadosReferencia {
+    margin-top: 50px;
+}
+
+.dadosPessoais #nomeCompleto {width: 36.6%;}
+
+.dadosPessoais #localNascimento {width: 27%;}
+
+.dadosPessoais #residencia {width: 39.7%;}
+
+.dadosPessoais #bairro {width: 18.2%;}
+
+.dadosPessoais #cidade {width: 16.8%;}
+
+.dadosPessoais #rg {width: 18%;}
+
+.dadosPessoais #cic{width: 16.8%;}
+
+.dadosPessoais #fone {width: 18%;}
+
+.dadosPessoais #estadoCivil {width: 15%;}
+
+.dadosPessoais #dataNascimento {width: 10%;}
+
+.dadosPessoais #aluguel {width: 16.5%;}
+
+.dadosPessoais #pensao {width: 14.5%;}
+
+.dadosPessoais #resAnt {width: 16.4%;}
+
+.dadosPessoais #cidAnt {width: 16%;}
+
+.dadosPessoais #cidTempo {width: 16.2%;}
+
+.dadosPessoais #localTrabalho {width: 28.2%;}
+
+.dadosPessoais #funcao {width: 41.7%;}
+
+.dadosPessoais #endereco {width: 40%;}
+
+.dadosPessoais #cidEmpresa {width: 18%;}
+
+.dadosPessoais #foneTrabalho {width: 18%;}
+
+.dadosPessoais #admitidoEm,
+.dadosPessoais #salario{
+    width: 11.8%;
+}
+
+.dadosPessoais #regEmpregador {width: 10.8%;}
+
+.dadosPessoais #empregoAnt {width: 12.8%;}
+
+/*Conjuge*/
+.dadosConjuge #conjuge {width: 42%;}
+
+.dadosConjuge #dnConj{width: 12%;}
+
+.dadosConjuge #rgConjuge {width: 15.3%;}
+
+.dadosConjuge #localTrabConju {width: 30%;}
+
+.dadosConjuge #endConjuge {width: 22.8%;}
+
+.dadosConjuge #cidConjuge {width: 15%;}
+
+.dadosConjuge #foneConjuge,
+.dadosConjuge #admConjuge,
+.dadosConjuge #refConjuge {
+    width: 12.5%;
+}
+
+.dadosConjuge #salarioConjuge {width: 13.5%;}
+
+.dadosReferencia #parente,
+.dadosReferencia #foneParente {
+    width: 18%;
+}
+
+.dadosReferencia #nomeParente {width: 41.5%;}
+
+.dadosReferencia #ruaParente,
+.dadosReferencia #ruaAmigo {width: 38%;}
+
+.dadosReferencia #bairroParente,
+.dadosReferencia #bairroAmigo {
+    width: 24%;
+}
+
+.dadosReferencia #cidadeParente,
+.dadosReferencia #cidadeAmigo {
+    width: 16.6%;
+}
+
+.dadosReferencia #nomeAmigo {width: 61.2%;}
+
+.dadosReferencia #foneAmigo {width: 18%;}
+
+.formPessoaFooter,
+.formVeiculoFooter {
+    margin-bottom: 60px;
+}
+
+/*CADASTRO CARRO*/
+.infoVeiculo,
+.dadosVeiculo {
+    width: 1150px;
+    margin-top: 50px;
+}
+
+.infoVeiculo #placa,
+.infoVeiculo #paises,
+.infoVeiculo #renavam {
+    width: 25.7%;
+}
+
+.dadosVeiculo #tipoVeiculo,
+.dadosVeiculo #placa,
+.dadosVeiculo #modelo,
+.dadosVeiculo #ano {
+    width: 18.8%;
+}
+
+.dadosVeiculo #peso,
+.dadosVeiculo #numeroEixo {
+    width: 10.5%;
+}
+
+.dadosVeiculo #numeroChassi,
+.dadosVeiculo #veiculo {
+    width: 12.4%;
+}
+
+.dadosVeiculo #primeiroLic,
+.dadosVeiculo #ultimoLic {
+    width: 32%;
+}
+
+@media(max-width:1150px) {
+
+    .colunaBannerPrincipal,
+    .footerItens img,
+    .bannerLateral,
+    .colunaInfos,
+    .menu {display: none;}
+
+    .headerItens {margin: 25px 50px; flex-direction: column;}
+    .menuCadastrar {margin-top: 15px;}
+
+    .cardsProdutos,
+    .produtosOferecidos,
+    .footerPage .footerItens,
+    .contato { flex-direction:column;}
+
+    .cardsProdutos .cardSemi {margin: 40px 0px 0px 0px;}
+    .contato {padding: 150px 5px 0px 5px;}
+    .contato .redeSocial{margin: 0;}
+    .contato .redeSocial {margin-top: 30px;}
+    .media { display: flex;}
+    .footerPage .footerItens { margin: 0px 40px;}
+    .footerPage .footerItens .copyright {
+        font-size: 10px;
+        text-align: center;
+    }
+
+    .articlePage .quemSomos .infoQuemSomos {
+        margin: 0px;
+        border: none;
+        padding: 50px;
+        font-size: 15px;
+    }
+}

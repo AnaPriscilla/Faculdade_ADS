@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Cadastro Cliente | BETE SA Concessionária</title>
+        <link rel="shortcut icon" href="../images/fav.png" type="image"/>
+        <link rel="stylesheet" href="../css/styles.css" type="text/css">
+    </head>
+    <body>
+        <header class="headerForm">
+            <div class="headerFormItens">
+                <div class="tituloHeaderForm">
+                    <img src="../images/iconUser.png" alt="icone cliente">
+                    <div class="subTituloForm">
+                        <h1>Cadastro de Pessoa Física</h1>
+                        <p>Bete SA - Concessionária ——————–—————</p>
+                    </div>
+                </div>
+                <a href="../index.html"><h4>Home</h4></a>
+            </div>
+        </header>
+        <main class="mainForm">
+            <section class="formPessoa">
+                <form action="#" method="get">
+                    <fieldset class="dadosPessoais">
+                        <legend>Dados Pessoais:</legend>
+                        <!--Nome Completo-->
+                        <label for="nomeCompleto">Nome Completo:</label>
+                        <input type="text" id="nomeCompleto" name="nomeCompleto"> 
+                        <!--Estado Civil-->
+                        <label for="estadoCivil">Estado Civil:</label>
+                        <select name="estadoCivil" id="estadoCivil">
+                            <option value="" disabled selected>Selecione</option>
+                            <option value="solteiro">Solteiro(a)</option>
+                            <option value="casado">Casado(a)</option>
+                            <option value="uniaoestavel">União Estável(a)</option>
+                            <option value="divorciado">Divorciado(a)</option>
+                            <option value="viuvo">Viúvo(a)</option>
+                            <option value="disquitado">Amasiado(a)</option>
+                        </select>
+                        <!--Data Nascimento-->
+                        <label for="dataNascimento">Data Nascimento:</label>
+                        <input type="tel" id="dataNascimento" name="dataNascimento" placeholder="___/___/___"> 
+                        <!--Local Nascimento-->
+                        <label for="localNascimento">Local de Nascimento:</label>
+                        <input type="text" id="localNascimento" name="localNascimento"> 
+                        <select id="ufNascimento" name="ufNascimento">
+                            <option value="" disabled selected>UF</option>
+                            <option value="AC">AC</option>
+                            <option value="AL">AL</option>
+                            <option value="AM">AM</option>
+                            <option value="AP">AP</option>
+                            <option value="BA">BA</option>
+                            <option value="CE">CE</option>
+                            <option value="DF">DF</option>
+                            <option value="ES">ES</option>
+                            <option value="GO">GO</option>
+                            <option value="MA">MA</option>
+                            <option value="MG">MG</option>
+                            <option value="MS">MS</option>
+                            <option value="MT">MT</option>
+                            <option value="PA">PA</option>
+                            <option value="PB">PB</option>
+                            <option value="PE">PE</option>
+                            <option value="PI">PI</option>
+                            <option value="PR">PR</option>
+                            <option value="RJ">RJ</option>
+                            <option value="RN">RN</option>
+                            <option value="RO">RO</option>
+                            <option value="RR">RR</option>
+                            <option value="RS">RS</option>
+                            <option value="SP">SP</option>
+                            <option value="SC">SC</option>
+                            <option value="SE">SE</option>
+                            <option value="TO">TO</option>
+                        </select>
+                        <!--Nº RG-->
+                        <label for="rg">Nº RG:</label>
+                        <input type="tel" id="rg" name="rg"> 
+                        <!--Nº CIC-->
+                        <label for="rg">Nº CIC:</label>
+                        <input type="tel" id="cic" name="cic"> 
+                        <!--Fone-->
+                        <label for="fone">Fone:</label>
+                        <input type="tel" id="fone" name="fone" placeholder="(DDD) 000-00-0000"> 
+                        <!--Residência-->
+                        <label for="residencia">Residência:</label>
+                        <input type="text" id="residencia" name="residencia"> 
+                        
+                        <!--Bairro-->
+                        <label for="bairro">Bairro:</label>
+                        <input type="text" id="bairro" name="bairro"> 
+                        <!--Cidade-->
+                        <label for="cidade">Cidade:</label>
+                        <input type="text" id="cidade" name="cidade"> 
+                        <!--Há qto, tempo-->
+                        <label for="qTempo">Há qto. tempo:</label>
+                        <select id="qTempo" name="qTempo">
+                            <option value="" disabled selected>Selecione</option>
+                            <option value="seismeses">6 meses</option>
+                            <option value="seismeses">mais de 6 meses</option>
+                        </select> 
+                        <!--Casa própria-->
+                        <label>Casa Própria? </label>
+                        <label for="casaPropriaSim">Sim</label>
+                        <input type="radio" id="casaPropriaSim" name="casaPropria" value="Sim" checked> 
+                        <label for="casaPropriNao">Não</label>
+                        <input type="radio" id="casaPropriaNao" name="casaPropria" value="Não"> 
+                       
+                        <!--Aluguel R$-->
+                        <label for="aluguel">Aluguel R$:</label>
+                        <input type="tel" id="aluguel" name="aluguel"> 
+                        <!--Pensão R$-->
+                        <label for="pensao">Pensão R$:</label>
+                        <input type="tel" id="pensao" name="pensao"> 
+                        <!--Res. Ant-->
+                        <label for="resAnt">Res. Ant:</label>
+                        <input type="text" id="resAnt" name="resAnt"> 
+                        <!--Cidade anterior-->
+                        <label for="cidAnt">Cidade:</label>
+                        <input type="text" id="cidAnt" name="cidAnt"> 
+                        <!--Qto. tempo-->
+                        <label for="cidTempo">Qto. tempo:</label>
+                        <input type="text" id="cidTempo" name="cidTempo"> 
+                        <!--Local de trabalho-->
+                         <label for="localTrabalho">Local de Trabalho (empresa):</label>
+                         <input type="text" id="localTrabalho" name="localTrabalho"> 
+
+                        <!--Função-->
+                        <label for="funcao">Função:</label>
+                        <input type="text" id="funcao" name="funcao"> 
+                        <!--Endereço-->
+                        <label for="endereco">Endereço:</label>
+                        <input type="text" id="endereco" name="endereco"> 
+                         <!--Cidade Empresa-->
+                         <label for="cidEmpresa">Cidade:</label>
+                         <input type="text" id="cidEmpresa" name="cidEmpresa"> 
+                        <!--Fone-->
+                        <label for="foneTrabalho">Fone:</label>
+                        <input type="text" id="foneTrabalho" name="foneTrabalho"> 
+                        <!--Admitido em-->
+                        <label for="admitidoEm">Admitido em:</label>
+                        <input type="text" id="admitidoEm" name="admitidoEm"> 
+                        <!--Reg. no empregador-->
+                        <label for="regEmpregador">Reg. no empregador:</label>
+                        <input type="text" id="regEmpregador" name="regEmpregador"> 
+                        <!--Salário R$-->
+                        <label for="salario">Salário R$:</label>
+                        <input type="text" id="salario" name="salario">
+                        <!--Emprego ant de até-->
+                        <label for="empregoAnt">Emprego ant de até:</label>
+                        <input type="text" id="empregoAnt" name="empregoAnt">  
+                    </fieldset>
+
+                    <fieldset class="dadosConjuge">
+                        <legend>Dados Cônjuge:</legend>
+                        <!--Conjuge-->
+                        <label for="conjuge">Conjuge:</label>
+                        <input type="text" id="conjuge" name="conjuge"> 
+                        <!--Data Nascimento-->
+                        <label for="dnConj">Data Nascimento:</label>
+                        <input type="tel" id="dnConj" name="dnConj" placeholder="____/____/____"> 
+                        <!--RG-->
+                        <label for="rgConjuge">Nº RG:</label>
+                        <input type="tel" id="rgConjuge" name="rgConjuge"> 
+                        <!--Local de Trabalho-->
+                        <label for="localTrabConju">Local de Trabalho:</label>
+                        <input type="text" id="localTrabConju" name="localTrabConju"> 
+                        <!--Endereço-->
+                        <label for="endConjuge">Endereço:</label>
+                        <input type="text" id="endConjuge" name="endConjuge"> 
+                        <!--Cidade-->
+                        <label for="cidConjuge">Cidade:</label>
+                        <input type="text" id="cidConjuge" name="cidConjuge"> 
+                        <!--Fone-->
+                        <label for="foneConjuge">Fone:</label>
+                        <input type="tel" id="fConjuge" name="fConjuge" placeholder="(DDD) 000-00-0000"> 
+                        <!--Admitido-->
+                        <label for="admConjuge">Admitido em:</label>
+                        <input type="text" id="admConjuge" name="admConjuge">
+                        <!--Ref no empregador-->
+                        <label for="refConjuge">Ref. no empregador:</label>
+                        <input type="text" id="refConjuge" name="refConjuge">
+                        <!--Salário-->
+                        <label for="salarioConjuge">Salário R$:</label>
+                        <input type="tel" id="salarioConjuge" name="salarioConjuge">    
+                    </fieldset>
+
+                    <fieldset class="dadosReferencia">
+                        <legend>Dados das Referências:</legend>
+                        <!--Parente-->
+                        <label for="parente">Parente:</label>
+                        <input type="text" id="parente" name="parente"> 
+                        <!--Nome-->
+                        <label for="nomeParente">Nome:</label>
+                        <input type="text" id="nomeParente" name="nomeParente"> 
+                        <!--Fone-->
+                        <label for="foneParente">Fone:</label>
+                        <input type="tel" id="foneParente" name="foneParente" placeholder="(DDD) 000-00-0000"> 
+                        <!--Rua-->
+                        <label for="ruaParente">Rua:</label>
+                        <input type="text" id="ruaParente" name="ruaParente"> 
+                        <!--Bairro-->
+                        <label for="bairroParente">Bairro:</label>
+                        <input type="text" id="bairroParente" name="bairroParente"> 
+                        <!--Cidade-->
+                        <label for="cidadeParente">Cidade:</label>
+                        <input type="text" id="cidadeParente" name="cidadeParente"> 
+                        <!--Nome de Amigo-->
+                        <label for="nomeAmigo">Nome de Amigo:</label>
+                        <input type="text" id="nomeAmigo" name="nomeAmigo"> 
+                        <!--Fone-->
+                        <label for="foneAmigo">Fone:</label>
+                        <input type="tel" id="foneAmigo" name="foneAmigo" placeholder="(DDD) 000-00-0000">
+                        <!--Rua-->
+                        <label for="ruaAmigo">Rua:</label>
+                        <input type="text" id="ruaAmigo" name="ruaAmigo">
+                        <!--Bairro-->
+                        <label for="bairroAmigo">Bairro:</label>
+                        <input type="text" id="bairroAmigo" name="bairroAmigo">  
+                        <!--Cidade-->
+                        <label for="cidadeAmigo">Cidade:</label>
+                        <input type="text" id="cidadeAmigo" name="cidadeAmigo">    
+                    </fieldset>
+                  
+                </form>
+            </section>
+        </main>
+        <footer class="formPessoaFooter"></footer>
+    </body>
+</html>
