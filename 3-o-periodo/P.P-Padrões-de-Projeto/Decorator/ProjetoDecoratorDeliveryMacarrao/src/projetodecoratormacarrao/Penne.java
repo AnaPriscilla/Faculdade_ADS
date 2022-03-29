@@ -8,9 +8,10 @@ package projetodecoratormacarrao;
  */
 public class Penne extends Massa {
     public Penne(){
-        descricao = "Captiva Sport 2.4";
+        descricao = "Penne";
     }
+    
     public double preco(){
-        return 105000.00;
+        return 20.89;
     }
 }

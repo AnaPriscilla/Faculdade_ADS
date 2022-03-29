@@ -8,9 +8,9 @@ package projetodecoratormacarrao;
  */
 public class Concha extends Massa {
     public Concha(){
-        descricao = "Captiva Sport 2.4";
+        descricao = "Concha";
     }
     public double preco(){
-        return 105000.00;
+        return 28.79;
     }
 }

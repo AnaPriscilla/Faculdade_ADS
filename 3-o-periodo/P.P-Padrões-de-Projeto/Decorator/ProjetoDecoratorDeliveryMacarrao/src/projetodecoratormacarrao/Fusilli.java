@@ -8,9 +8,9 @@ package projetodecoratormacarrao;
  */
 public class Fusilli extends Massa {
     public Fusilli(){
-        descricao = "Captiva Sport 2.4";
+        descricao = "Fusilli ";
     }
     public double preco(){
-        return 105000.00;
+        return 18.90;
     }
 }

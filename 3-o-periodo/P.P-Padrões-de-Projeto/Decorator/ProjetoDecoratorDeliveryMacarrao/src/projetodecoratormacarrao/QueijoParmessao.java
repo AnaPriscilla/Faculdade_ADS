@@ -1,7 +1,7 @@
 /*
  */
 package projetodecoratormacarrao;
-
+import projetodecoratormacarrao.Adicional;
 /**
  *
  * @author anapriscilla
