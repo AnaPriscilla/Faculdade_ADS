@@ -54,6 +54,13 @@ public class Janela extends javax.swing.JFrame {
                 "MATRICULA", "NOME"
             }
         ));
+        jTableGridAlunos.addInputMethodListener(new java.awt.event.InputMethodListener() {
+            public void caretPositionChanged(java.awt.event.InputMethodEvent evt) {
+                jTableGridAlunosCaretPositionChanged(evt);
+            }
+            public void inputMethodTextChanged(java.awt.event.InputMethodEvent evt) {
+            }
+        });
         jScrollPane1.setViewportView(jTableGridAlunos);
 
         jToggleButton1.setText("ORDENADO PELO NOME");
@@ -110,6 +117,10 @@ public class Janela extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(rootPane, erro);
         }
     }//GEN-LAST:event_jToggleButton1ActionPerformed
+
+    private void jTableGridAlunosCaretPositionChanged(java.awt.event.InputMethodEvent evt) {//GEN-FIRST:event_jTableGridAlunosCaretPositionChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTableGridAlunosCaretPositionChanged
 
     /**
      * @param args the command line arguments

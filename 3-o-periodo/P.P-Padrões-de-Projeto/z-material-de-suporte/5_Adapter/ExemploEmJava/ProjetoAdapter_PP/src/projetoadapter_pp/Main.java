@@ -26,11 +26,6 @@ public class Main {
         int potencia = calcular.potencia(3, 2);
         System.out.println("Raiz Quadrada de 16 = " + raiz);
         System.out.println("Potencia de 3 elevado 2 = " + potencia);
-
-
-
-
-
     }
 
 }
