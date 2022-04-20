@@ -4,7 +4,7 @@ package dados;
 
 /**
  *
- * @author User
+ * @author anapriscilla
  */
 public class Lista<T> {
 

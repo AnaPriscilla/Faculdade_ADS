@@ -1,5 +1,5 @@
 /*
-PILHA:
+PILHA: Adiciona no ínicio, por exemplo, se adicionar por ultimo o número aparecerá como primeiro.
  */
 package executaveis;
 

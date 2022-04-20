@@ -1,5 +1,5 @@
 /*
-LISTA: 
+LISTA: Pode-se escolher onde vai inserir no início, fim por posição do índice.
  */
 package executaveis;
 
