@@ -45,7 +45,12 @@ public class MainFila {
                 case 3:
                     System.out.println("Digite um número para pesquisar na Fila:");
                     int numeroParaPesquisar = sc.nextInt();
-                    fila.buscarElemento(numeroParaPesquisar);
+                    //Assim fica mais fácil para usar com telas, pois armazena na variável.
+                    boolean saidafila = fila.buscarElemento(numeroParaPesquisar);
+                    System.out.println(saidafila);
+                    
+                    //Para imprimir no console, pois não precisa armazenar na variável.
+                    /*System.out.println(fila.buscarElemento(numeroParaPesquisar));*/
                     break;
                 case 4:
                     System.out.println("\nFila: " + fila);

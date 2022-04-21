@@ -10,6 +10,7 @@ import java.util.Scanner;
  *
  * @author anapriscilla
  */
+
 public class MainLista {
 
     public static void main(String[] args) throws EmptyListException {
@@ -90,7 +91,10 @@ public class MainLista {
                 case 3:
                     System.out.println("Digite um número para pesquisar na Lista:");
                     int numeroParaPesquisar = sc.nextInt();
-                    l.buscarElemento(numeroParaPesquisar);
+                    //l.buscarElemento(numeroParaPesquisar);
+                    boolean saidalista = l.buscarElemento(numeroParaPesquisar);
+                    System.out.println(saidalista);
+                    
                     break;
                 case 4:
                     System.out.println("\nLista: " + l);

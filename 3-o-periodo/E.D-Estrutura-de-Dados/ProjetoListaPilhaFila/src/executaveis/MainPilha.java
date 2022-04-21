@@ -46,7 +46,10 @@ public class MainPilha {
                 case 3:
                     System.out.println("Digite um número para pesquisar na Pilha:");
                     int numeroParaPesquisar = sc.nextInt();
-                    p.buscarElemento(numeroParaPesquisar);
+                    //p.buscarElemento(numeroParaPesquisar);
+                    boolean saidapilha = p.buscarElemento(numeroParaPesquisar);
+                    System.out.println(saidapilha);
+                    
                     break;
                 case 4:
                     System.out.println("\nPilha: " + p);
