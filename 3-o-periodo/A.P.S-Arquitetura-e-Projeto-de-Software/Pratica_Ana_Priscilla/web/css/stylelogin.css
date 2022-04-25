@@ -1,0 +1,74 @@
+/*
+*/
+/* 
+    Created on : 25 de abr. de 2022, 16:14:34
+    Author     : anapriscilla
+*/
+
+* { box-sizing: border-box;}
+
+.menu-home {
+    float: right;
+    margin: 3% 10% 0 0;
+}
+
+.menu-home a {
+    text-decoration: none;
+    color:#5a0080;
+    font-weight: bold;
+}
+
+.menu-home a:hover {
+    text-decoration: underline;
+    color:#4a0169;
+}
+
+.btn-login { 
+    padding: 1rem 0; 
+    font-size: 15px; 
+    line-height: normal; 
+    width: 100%; 
+    display:block; 
+    background-color: #5a0080;
+    border: 1px solid #5a0080;
+    color: #fff;
+    cursor: pointer;
+}
+
+.btn-login:hover {
+    background-color: #4a0169;
+    border: 1px solid #4a0169;
+}
+
+html { width: 100%; height:100%; overflow:hidden; }
+
+body { 
+	width: 100%;
+	height:100%;
+	font-family: 'Verdana', sans-serif;
+    background-color: rgba(237, 237, 237, 0.468);
+}
+.login { 
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin: -150px 0 0 -150px;
+	width:300px;
+	height:300px;
+}
+.login h1 { color: #5a0080; letter-spacing:1px; text-align:center; }
+
+input { 
+	width: 100%; 
+	margin-bottom: 10px; 
+	background: rgba(90, 0, 128, 0.07);
+	border: none;
+	outline: none;
+	padding: 10px;
+	font-size: 13px;
+	text-shadow: rgb(214, 214, 214);
+	border: 1px solid rgba(90, 0, 128, 0.07);
+}
+
+.resultadologin {margin-top: 2rem;}
+

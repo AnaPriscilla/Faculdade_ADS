@@ -1,0 +1,95 @@
+/* 
+    Created on : 25 de abr. de 2022, 12:05:57
+    Author     : anapriscilla
+*/
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	font-family: 'Verdana', sans-serif;
+        background: rgba(237, 237, 237, 0.468);
+}
+
+.navbar{
+	overflow: hidden;
+	width: 100%;
+	background: #5a0080;
+	color: #ecf0f1;
+	padding: 0 10% 0 12%;
+}
+
+.logo {
+        margin-top: 0.2%;
+	overflow: hidden;
+	float: left;
+}
+
+.menu {
+	overflow: hidden;
+	float: right;
+}
+
+.menu ul {
+	padding: 0;
+	margin: 0;
+	list-style-type: none;
+}
+
+.menu ul li {
+	float: left;
+}
+
+.menu li a {
+	display: inline-block;
+	padding: 35px 30px;
+	color: inherit;
+	text-decoration: none;
+	font-size: 20px;
+}
+
+.menu ul li a:hover {
+    background-color: #4a0169;
+}
+
+.content, .copyright {
+	display: flex;
+	align-items: flex-start;
+	justify-content: center;
+}
+
+.content, .copyright p {
+	margin-top: 4%;
+}
+
+.content-text {
+	width: 22%;
+	margin-left: 5%;
+}
+
+.content-text p {
+	font-size: 13px;
+	text-align: justify;
+}
+
+.content img{
+	width: 50%;
+}
+
+.copyright p {
+	font-size: 10px;
+	color: grey;
+}
+
+.copyright p a {
+    text-decoration: none;
+    color:#5a0080;
+}
+
+.copyright p a:hover {
+    text-decoration: underline;
+    color:#4a0169;
+}
