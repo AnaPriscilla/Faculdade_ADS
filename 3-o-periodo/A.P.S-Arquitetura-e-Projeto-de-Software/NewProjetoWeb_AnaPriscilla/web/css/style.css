@@ -15,15 +15,15 @@ body {
 }
 
 h1 {
-    margin: 0 0 1.5rem 1rem;
-    border-bottom: 8px solid #00938c;
+    margin-bottom: 1.5rem;
+    border-bottom: 8px solid rgb(233,233,233);
     padding-bottom: .5rem;
-    color: #00938c;
+    color: #4e4e4e;
     width: 100%;
 }
 
 form {
-    padding: 2rem 1rem;
+    padding: 2rem 0;
     width: 100%;
 }
 
@@ -99,15 +99,17 @@ th {
     padding: .5rem 2rem;
     cursor: pointer;
     margin: 0 .2rem;
-    background-color: #ffd749;
-    border: 1px solid #ffd749;
+    background-color: rgb(233,233,233);
+    border: 1px solid rgb(233,233,233);
+    color: #292929;
     font-size: 1.1rem;
     border-radius: .2rem;
 }
 
 .botoes button:hover {
-     background-color: #ffe457;
-    border: 1px solid #ffe457;
+    background-color: #4e4e4e;
+    border: 1px solid #4e4e4e;
+    color: #fefefe;
 }
 
 td {
